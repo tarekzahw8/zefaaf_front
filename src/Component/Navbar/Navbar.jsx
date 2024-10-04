@@ -1,31 +1,54 @@
-// Navbar.jsx
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaLanguage } from 'react-icons/fa';
-import logo from '../../assets/Logo.png'
+import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../../assets/Logo.png';
+
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [navbarScroll , setNavbarScroll] = useState('bg-transparent')
+const location = useLocation()
+const handleScroll = ()=>{
+if(window.scrollY > 50){
+setNavbarScroll('bg-[#5650ce ]')
+}else{
+setNavbarScroll('bg-transparent')
+}
+}
+useEffect(()=>{
+window.addEventListener('scroll' , handleScroll);
+return()=>{
+window.removeEventListener('scroll' , handleScroll);
+}
+},[navbarScroll])
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="Navbar text-white p-4 overflow-hidden flex items-center">
-      <div className="w-full px-4 mx-auto flex justify-between items-center">
+    <nav className={`Navbar ${navbarScroll} max-md:bg-[#5650ce] shadow-lg  text-white p-4 transition-colors duration-300 overflow-hidden fixed top-0 left-0 right-0 z-50 ${isMenuOpen ? "h-[100vh]" : ""} flex items-center `}>
+      <div className={`w-full  ${isMenuOpen ? " h-full  flex-col flex justify-start items-center" : "flex justify-between  items-center"}  px-4 mx-auto`}>
 
-      <div className=''>
-            <img src={logo} className='w-[70px] h-full  transform '  alt="" />
+        <div className="max-md:hidden  ">
+          <img src={logo} className="w-[70px] h-full transform" alt="Logo" />
+        </div>
+
+        <div className='flex md:hidden items-center justify-between w-full'>
+
+        <div className=" flex items-center justify-between w-full">
+          <img src={logo} className="w-[70px] h-full transform" alt="Logo" />
+
+          <button onClick={toggleMenu} className="text-white md:hidden text-2xl">
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
 
 
-        <div className="flex items-center w-fit  gap-4 font-medium text-[18px]">
-          <Link to="/" className="">{t('Home')}</Link>
-          <Link to="/premium" className="">الباقات</Link>
-          <Link to="/about" className="">قصص النجاح</Link>
-          <Link to="/about" className="">المقالات</Link>
-          <Link to="/about" className="">الزواج في ضوء السنه</Link>
-          <Link to="/about" className="">{t('About')}</Link>
         </div>
 
 
@@ -33,21 +56,35 @@ const Navbar = () => {
 
 
 
+        {/* Links - Hidden on small screens */}
+        <div
+          className={`  md:flex md:flex-row     font-medium text-[18px]
+          ${isMenuOpen ? 'flex flex-col  items-start gap-2 mt-[30px ]   w-full ' : 'hidden  gap-4'} `}
+        >
+          <Link to="/" className={` max-md:w-full NavLink ${location.pathname === '/'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>{t('Home')}</Link>
+          <Link to="/premium" className={` max-md:w-full NavLink ${location.pathname === '/premium'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الباقات</Link>
+          <Link to="/about" className={` max-md:w-full NavLink ${location.pathname === '/about'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>قصص النجاح</Link>
+          <Link to="/articles" className={` max-md:w-full NavLink ${location.pathname === '/articles'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>المقالات</Link>
+          <Link to="/marriage" className={` max-md:w-full NavLink ${location.pathname === '/marriage'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الزواج في ضوء السنه</Link>
+          <Link to="/about" className={` max-md:w-full NavLink ${location.pathname === '/about'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>{t('About')}</Link>
+        </div>
 
+        {/* Buttons */}
+        <div className={` md:flex md:flex-row items-center space-x-0 md:space-x-4 ${isMenuOpen ? 'flex pt-10 w-full   gap-4' : 'hidden'} md:flex`}>
+          <select className="text-white  hidden outline-none bg-transparent">
+            <option className="text-gray-300" onClick={() => changeLanguage('ar')} value="">
+              AR
+            </option>
+            <option className="text-gray-300" onClick={() => changeLanguage('em')} value="">
+              EN
+            </option>
+          </select>
 
-
-
-
-        <div className="flex space-x-4">
-        <select className="text-white hidden     outline-none bg-transparent" >
-                                <option className='text-gray-300' onClick={() => changeLanguage('ar')} value="">AR</option>
-                                <option className='text-gray-300' onClick={() => changeLanguage('em')} value="">EN</option>
-                            </select>
-          <Link to="/login" className=" button_bg h-[40px] flex items-center text-white font-medium  px-4 rounded-[15px]">
+          <Link to="/login" className="button_bg h-[40px] flex items-center text-white font-medium px-4 rounded-[15px]">
             {t('Login')}
           </Link>
 
-          <Link to="/login" className=" button_bg text-white font-medium flex items-center px-4 rounded-[15px]">
+          <Link to="/Register" className="button_bg h-[40px] text-white font-medium flex items-center px-4 rounded-[15px]">
             {t('Register')}
           </Link>
         </div>

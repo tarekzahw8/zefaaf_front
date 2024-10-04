@@ -1,19 +1,46 @@
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
 :root{
     --mainColor : #5650ce ;
 --cardColor:#262950;
 --colorText :white ;
 --colorIndigo: #6610f2 ;
 }
+/* scroll bar change style */
+
+/* For WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color (scroll handle) */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #f1f1f1; /* Space between the thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb color on hover */
+}
+
+html {
+    scrollbar-color: #888 #f1f1f1; /* Thumb color and track color */
+    scrollbar-width: thin; /* Scrollbar width: auto, thin, or none */
+}
+
 body{
 background-color: var(--cardColor);
 color : var(--colorText);
-font-family: "Rubik", sans-serif;
+font-family: "Vazirmatn", sans-serif;
 }
 .Navbar{
 transition: .3s ease-in;
-background-color: var(--mainColor);
+/* border-bottom: .1em solid white; */
 height: 80px;
 }
 .Navbar img{
@@ -22,7 +49,55 @@ height: 80px;
 .Navbar img:hover{
     scale: 1.1;
 }
+.home_section{
+    background-image: url('./assets/hero-banner.png');
+    padding: 120px 0 120px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
 
 .button_bg{
+/* background-color: #262950; */
     background-image: linear-gradient(166deg, rgb(242, 40, 118) 0%, rgb(148, 45, 217) 100%);
 }
+
+
+.NavLink{
+    /* background: ; */
+    color: white;
+    text-decoration: none;
+position: relative;
+display: inline-block;
+}
+.NavLink::after{
+    content: '';
+position: absolute;
+right: 0%;
+/* color: #000; */
+bottom: -90%;
+width: 0;
+background-color: white;
+height: 2px;
+transition: width 0.3s ease, left 0.3s ease;
+}
+@media (max-width :600px) {
+    .NavLink::after{
+        content: '';
+bottom: -50%;
+    }
+
+}
+.NavLink:hover::after,
+.NavLink.active::after{
+width: 100%;
+left: 0;
+color: #000;
+}
+
+
+
