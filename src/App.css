@@ -1,0 +1,10 @@
+:root{
+    --mainColor : #5650ce ;
+--cardColor:#262950;
+--colorText :white ;
+--colorIndigo: #6610f2 ;
+}
+body{
+background-color: var(--cardColor);
+color : var(--colorText)
+}
