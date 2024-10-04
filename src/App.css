@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
     --mainColor : #5650ce ;
 --cardColor:#262950;
@@ -6,5 +8,21 @@
 }
 body{
 background-color: var(--cardColor);
-color : var(--colorText)
+color : var(--colorText);
+font-family: "Rubik", sans-serif;
+}
+.Navbar{
+transition: .3s ease-in;
+background-color: var(--mainColor);
+height: 80px;
+}
+.Navbar img{
+    transition: .3s ease-in;
+}
+.Navbar img:hover{
+    scale: 1.1;
+}
+
+.button_bg{
+    background-image: linear-gradient(166deg, rgb(242, 40, 118) 0%, rgb(148, 45, 217) 100%);
 }
