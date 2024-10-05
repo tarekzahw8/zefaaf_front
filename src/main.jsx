@@ -4,6 +4,10 @@ import './index.css'
 import { AppProvider } from './Store/StateData'
 import './locale/i18n.js'
 import "@lottiefiles/lottie-player";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 createRoot(document.getElementById('root')).render(
   <AppProvider>
     <App />

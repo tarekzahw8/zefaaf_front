@@ -15,7 +15,7 @@ const resources = {
   ar: {
     translation: {
       "Home": "الرئيسية",
-      "About": "عن الموقع",
+      "About": "نبذة عنا",
       "Login": "تسجيل الدخول",
       "Languages": "اللغات",
       "Register": "تسجيل جديد"

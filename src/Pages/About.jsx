@@ -1,0 +1,92 @@
+import { Link } from 'react-router-dom'
+import imageSection from '../assets/illutration.png'
+import groom from '../assets/groom.png'
+import { useTranslation } from 'react-i18next';
+
+const About = () => {
+  const { t } = useTranslation();
+
+  return (
+    <div className='mt-[100px] w-full'>
+        <div className='w-[80%] max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center justify-between  '>
+<div className='w-[50%] max-md:w-full flex flex-col items-start justify-around gap-5'>
+<h3 className='text-[45px] max-md:text-[35px] font-semibold'> من نحن ؟ </h3>
+<p className='text-white text-[16px] max-md:text-[14px]  '
+>
+✽ فكرة منصة زفاف 💡
+جاءت ابتداءً لجبر خواطر المسلمين حول العالم،
+ثم لنشر العفة بين الباحثين عن الزواج الشرعي.
+
+✽ ما الذي يميز منصة زفاف؟
+زفاف منصة تتمتع بالأمان والسرية،
+والانضباط بالضوابط الإسلامية والشرعية،
+وهي للباحثين عن الزواج الاسلامي بشتى بقاع الأرض،
+مقرها الرسمي هولندا - لاهاي - أوروبا
+ومتواجدون بقوة في دول الخليج،
+كما أصبحت المنصة تغطي جميع دول العالم بفضل الله،
+وشعارنا جميعاً خطط لزواجك بأخلاق إسلامية.
+
+</p>
+    {/* <img src={} alt="" /> */}
+
+
+
+
+<div className="flex mt-4 gap-10 max-md:gap-[5%] space-x-4">
+
+<Link to="/login" className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]">
+  {t('Login')}
+</Link>
+
+<Link to="/Register" className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]">
+  {t('Register')}
+</Link>
+</div>
+</div>
+<div className='w-[50%] max-md:w-full flex items-center justify-end'>
+<img src={imageSection} alt="" />
+</div>
+        </div>
+
+        <section className="py-12 bg-[#5650ce]">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-8">خدماتنا</h2>
+
+        <div className="bg-white flex items-center justify-center p-8 rounded-lg shadow-lg">
+            <div className=''>
+
+          <ul className="list-disc list-inside mb-6 text-lg text-gray-700">
+            <li className="mb-2">التعارف وفق المبادئ والأخلاق الإسلامية.</li>
+            <li className="mb-2">الزواج الشرعي المبني على كتاب الله وسنة رسوله ﷺ.</li>
+            <li className="mb-2">تقديم الاستشارات والنصائح الفقهية والاجتماعية.</li>
+            <li className="mb-2">تأهيل الأسرة قبل الزواج وبعده لضمان الاستقرار.</li>
+          </ul>
+          <p className="text-xl font-semibold text-center mb-4">
+            زفاف منصة إسلامية شرعية يشرف عليها نخبة من العلماء والدعاة الموثوق بهم، وتهدف إلى تسهيل الزواج الشرعي وفق الضوابط الإسلامية.
+          </p>
+          <p className="text-lg text-gray-700 mb-4">
+            جميع بيانات الأعضاء تخضع للتدقيق لضمان المصداقية والأمان في مجتمع زفاف.
+          </p>
+          <h3 className="text-2xl font-bold mb-4">دور الهيئة الشرعية لمنصة زفاف:</h3>
+          <ul className="list-disc list-inside text-lg text-gray-700">
+            <li className="mb-2">تقديم محتوى هادف ونافع لجميع الأعضاء.</li>
+            <li className="mb-2">بث محاضرات ودورات علمية للزوجين.</li>
+            <li className="mb-2">ضمان بيئة آمنة لجميع المستخدمين.</li>
+            <li className="mb-2">التعامل الحازم مع المخالفين والمتلاعبين.</li>
+          </ul>
+          </div>
+
+          <div>
+    <img src={groom} alt="" />
+</div>
+        </div>
+
+
+
+      </div>
+    </section>
+        </div>
+  )
+}
+
+export default About
