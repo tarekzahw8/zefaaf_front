@@ -1,8 +1,11 @@
 import { BsTelegram } from 'react-icons/bs';
 import shape from '../../assets/f-shape.png'
-import flower01 from '../../assets/flower01.png'
 import icon_n from '../../assets/n-icon.png'
 import right_shape from '../../assets/right-shape.png'
+import ani1 from '../../assets/image2.json'
+import ani3 from '../../assets/image3.json'
+
+import Lottie from 'lottie-react';
 const Footer = () => {
   return (
     <footer className="footer-section rounded-t-[10px] relative z-[99] overflow-hidden bg-transparent text-white pt-16">
@@ -14,16 +17,10 @@ const Footer = () => {
       />
       <div className=' absolute w-full z-[-1] flex-row-reverse overflow-hidden flex items-center justify-between'>
 
-      <img
-        className=" "
-        src={flower01}
-        alt="Flower"
-      />
-      <img
-        className=" "
-        src={right_shape}
-        alt="Right Shape"
-      />
+              <Lottie className="w-full opacity-10 max-md:w-fit" animationData={ani1} />
+
+              <Lottie className="w-full opacity-10 max-md:w-fit" animationData={ani3} />
+
       </div>
 
       {/* Newsletter Section */}
@@ -37,8 +34,9 @@ const Footer = () => {
                     <div className='w-[150px] rounded-full flex items-center justify-center button_bg h-[150px]'>
 
                     <img
+                     className='animate-bounce'
                       src={icon_n}
-                      alt="Newsletter Icon"
+                      alt="Newsletter Icon "
                       />
                       </div>
                   </div>
@@ -46,7 +44,7 @@ const Footer = () => {
                   اشترك لتلقي بريد إلكتروني شهريًا بأحدث الأخبار!                  </p>
                   <form className="newslater-form flex justify-center">
                     <input
-                      className="p-3 rounded-r-lg outline-none text-[#333] font-bold w-3/4 md:w-full"
+                      className="p-3 rounded-r-lg outline-none pt-4 text-[#333] font-bold w-3/4 md:w-full"
                       type="text"
                       placeholder="اكتب بريدك الالكتروني"
                     />

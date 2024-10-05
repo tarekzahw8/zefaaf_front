@@ -6,7 +6,7 @@ import icon4 from '../../assets/icon04.png';
 const Card = () => {
   const items = [
     { id: 1, icon: icon1, text: 'امان 100%' },
-    { id: 2, icon: icon2, text: 'أكثر أمانًا ' },
+    { id: 2, icon: icon2, text: 'أكثر خصوصية ' },
     { id: 3, icon: icon3, text: ' حمايه  100%'  },
     { id: 4, icon: icon4, text: 'المطابقة الذكية' },
   ];

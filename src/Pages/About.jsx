@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import imageSection from '../assets/illutration.png'
-import groom from '../assets/groom.png'
+import groom from '../assets/groom.jpg'
 import { useTranslation } from 'react-i18next';
+import Lottie from 'lottie-react';
+import ani1 from '../assets/image1.json'
 
 const About = () => {
   const { t } = useTranslation();
@@ -44,7 +46,7 @@ const About = () => {
 </div>
 </div>
 <div className='w-[50%] max-md:w-full flex items-center justify-end'>
-<img src={imageSection} alt="" />
+<Lottie className="w-full max-md:w-fit" animationData={ani1} />
 </div>
         </div>
 
@@ -85,6 +87,38 @@ const About = () => {
 
       </div>
     </section>
+
+
+
+
+    <div className="max-w-4xl mx-auto p-8 bg-white text-[#5650ce] shadow-lg rounded-t-lg">
+      <h1 className="text-3xl font-bold text-center mb-6">منصة زفاف</h1>
+
+      <p className="text-lg mb-4">
+        تسعى لتوفير بيئة مجتمعية صالحة قائمة على البحث عن شريك الحياة بأخلاق إسلامية.
+        كما نسعى جاهدين لترجمة التكنولوجيا العصرية والحلول البرمجية من خلال ربط
+        المستخدمين فيما بينهم وتقديم كل سُبل الدعم لهم لتحقيق حلمهم ومرادهم الشرعي في إيجاد زوج المستقبل.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-6 mb-4">سياسة وتوجهات منصة زفاف</h2>
+
+      <ul className="list-disc list-inside mb-6">
+        <li>نتبع السياسة الشرعية في كل تعاملاتنا ولا نسمح بأية تجاوزات أخلاقية أو دينية.</li>
+        <li>جميع القائمين على منصة زفاف مسلمون وملتزمون بتطبيق أحكام الشريعة في تعاملاتهم.</li>
+        <li>إتاحة التسجيل على منصة زفاف مجانًا للجميع.</li>
+        <li>
+          لا مجال على منصة زفاف للتعارف أو الصداقة أو زواج المتعة أو الزواج المؤقت أو الزواج العرفي،
+          أو تحت أي مسمى من المسميات الباطلة.
+        </li>
+      </ul>
+
+      <p className="text-lg mb-4">
+        منصة زفــاف تتمنى للجميع حظاً وافراً في إيجاد نصفه الآخر، كما نرجوا من الله العلي القدير أن
+        يوفق الجميع لما يُحب ويرضى وأن يكتب لهم السعادة في الدارين إنه ولي ذلك والقادر عليه.
+      </p>
+
+      <p className="text-lg text-center font-semibold">والله ولي التوفيـــق</p>
+    </div>
         </div>
   )
 }

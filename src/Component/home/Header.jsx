@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
-import ani1 from '../../assets/ImageHomeAnimation.json'
+import ani1 from '../../assets/aimg1.png'
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className='w-[90%] max-md:w-[100%]  max-md:flex-col-reverse mx-auto  flex items-center justify-around'>
 
-<div className='w-[50%] max-md:w-[100%]  flex flex-col items-start justify-around h-full max-md:h-fit p-8 max-md:p-1 '>
+<div className='w-[65%] max-md:w-[100%]  flex flex-col items-start justify-around h-full max-md:h-fit p-8 max-md:p-1 '>
     <div className='flex flex-col justify-around  h-full  '>
 
     <h3 className='text-[55px] max-md:text-[30px]  font-semibold'>ابحث عن شريك حياتك بأخلاق إسلامية    </h3>
@@ -38,7 +38,8 @@ const Header = () => {
 
 
 <div className="animation ">
-<Lottie  className='w-[500px] max-md:w-fit' animationData={ani1} />
+<img src={ani1} className="imageCard"  alt="" />
+{/* <Lottie  className='w-[500px] max-md:w-fit' animationData={ani1} /> */}
 </div>
 
 

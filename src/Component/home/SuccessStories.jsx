@@ -74,13 +74,23 @@ const SuccessStoriesSlider = () => {
         navigation ={false}
         pagination={{ clickable: true }}
         spaceBetween={25}
-        slidesPerView={3}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
         className="w-full max-w-4xl mx-auto"
       >
         {successStories.map((story, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#5650ce] p-6 rounded-lg shadow-lg text-center relative">
-              <div className="flex w-full shadow-sm justify-around items-center  ">
+            <div className="bg-[#5650ce] max-md:w-[90%] mx-auto p-6 rounded-lg shadow-lg text-center relative">
+              <div className="flex w-full  shadow-sm justify-around items-center  ">
                 <div className=" flex flex-col  items-center gap-3">
                   <img
                     src={story.husbandImage}

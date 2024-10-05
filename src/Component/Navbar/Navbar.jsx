@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav
       className={`Navbar ${navbarScroll} max-md:bg-[#5650ce] shadow-lg z-[99119]  text-white p-4 transition-colors duration-300  fixed top-0 left-0 right-0  ${
-        isMenuOpen ? "h-[100vh]" : ""
+        isMenuOpen ? "h-[100vh] overflow-scroll" : ""
       } flex items-center `}
     >
       <div
@@ -71,26 +71,27 @@ const Navbar = () => {
           } `}
         >
           <div className="relative group"></div>
+
           <Link
             to="/"
             className={` max-md:w-full NavLink ${
               location.pathname === "/" ? "active" : ""
             }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
           >
-            {t("Home")}
-          </Link>
+{t('Home')}
+     </Link>
+          <Link
+            to="/package"
+            className={` max-md:w-full NavLink ${
+              location.pathname === "/package" ? "active" : ""
+            }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
+          >
+الباقات
+     </Link>
 
-          <div className="relative group">
-            <Link
-              to="/services"
-              className={`nav-link flex gap-2 items-center  ${
-                location.pathname === "/services" ? "active" : ""
-              }`}
-            >
-              <MdKeyboardArrowDown ClassName="w-4 h-4" />
-              الباقات
-            </Link>
-            <div className="absolute top-5 w-[200px] hidden group-hover:flex flex-col bg-[#6610f2] text-black mt-2 p-2 rounded shadow-lg">
+          {/* <div className="relative group">
+
+            <div className="absolute top-5 z-[99999] w-[200px] hidden group-hover:flex flex-col bg-[#6610f2] text-black mt-2 p-2 rounded shadow-lg">
               <Link
                 to="/service1"
                 className="p-2 hover:bg-[#262950]  font-medium  text-white"
@@ -113,7 +114,7 @@ const Navbar = () => {
                 باقه فضي{" "}
               </Link>
             </div>
-          </div>
+          </div> */}
           {/* <Link to="/premium" className={` max-md:w-full NavLink ${location.pathname === '/premium'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الباقات</Link> */}
           <Link
             to="/SuccessStories"
