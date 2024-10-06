@@ -91,7 +91,7 @@ const Navbar = () => {
 الباقات
      </Link>
 
-          <div className="relative group">
+          {/* <div className="relative group">
 
             <div className="absolute top-5 z-[99999] w-[200px] hidden group-hover:flex flex-col bg-[#6610f2] text-black mt-2 p-2 rounded shadow-lg">
               <Link
@@ -116,7 +116,8 @@ const Navbar = () => {
                 باقه فضي{" "}
               </Link>
             </div>
-          </div>
+          </div> */}
+          {/* <Link to="/premium" className={` max-md:w-full NavLink ${location.pathname === '/premium'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الباقات</Link> */}
 
 
 
