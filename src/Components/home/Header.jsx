@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
 import ani1 from '../../assets/aimg1.png'
+
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {

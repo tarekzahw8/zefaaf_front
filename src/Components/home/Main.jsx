@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import imageSection from "../../assets/illutration.png";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
-import ani1 from "../../assets/image1.json";
+import ani1 from "../../AnimationImage/image1.json";
 
 const Main = () => {
   const { t } = useTranslation();
@@ -23,13 +22,12 @@ const Main = () => {
             "زفاف" هو تطبيق مصمم خصيصًا لمساعدة العزاب في العثور على شريك حياة
             يناسب تطلعاتهم ضمن إطار قيمنا الإسلامية. إذا كنت تبحث عن وسيلة بسيطة
             وآمنة للتعرف على الفردي، فإن "زفاف" هو الخيار الأمثل.
-<p></p>
-             يوفر لك
-            التطبيق ميزات مجانية تتيح لك استكشاف ملفات تعريف العزاب الذين يعيشون
-            بالقرب منك، والتواصل معهم، ومقابلتهم بطريقة محترمة، مما يساعدك في
-            رحلتك نحو بناء علاقة مبنية على الحب والاحترام. مع "زفاف"، ستحصل على
-            تجربة مستخدم مميزة تتيح لك التواصل مع آلاف العزاب، مما يسهل عليك
-            العثور على الشريك المثالي في بيئة آمنة ومريحة.
+            <p></p>
+            يوفر لك التطبيق ميزات مجانية تتيح لك استكشاف ملفات تعريف العزاب
+            الذين يعيشون بالقرب منك، والتواصل معهم، ومقابلتهم بطريقة محترمة، مما
+            يساعدك في رحلتك نحو بناء علاقة مبنية على الحب والاحترام. مع "زفاف"،
+            ستحصل على تجربة مستخدم مميزة تتيح لك التواصل مع آلاف العزاب، مما
+            يسهل عليك العثور على الشريك المثالي في بيئة آمنة ومريحة.
           </p>
           {/* <img src={} alt="" /> */}
 
@@ -50,7 +48,10 @@ const Main = () => {
           </div>
         </div>
         <div className="w-[50%] max-md:w-full pr-16 flex items-center  justify-end">
-          <Lottie className="w-full max-md:w-fit imageCard" animationData={ani1} />
+          <Lottie
+            className="w-full max-md:w-fit imageCard"
+            animationData={ani1}
+          />
         </div>
       </div>
     </div>

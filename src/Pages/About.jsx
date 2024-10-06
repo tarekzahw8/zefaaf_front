@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import imageSection from '../assets/illutration.png'
-import groom from '../assets/groom.jpg'
+import groom from '../assets/ZEFAAF AVATAR NEW .png'
 import { useTranslation } from 'react-i18next';
 import Lottie from 'lottie-react';
-import ani1 from '../assets/image1.json'
+import ani1 from '../AnimationImage/image1.json'
 
 const About = () => {
   const { t } = useTranslation();

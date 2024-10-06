@@ -3,13 +3,14 @@ import {  useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import "./App.css";
-import Navbar from "./Component/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import {  BiArrowToTop } from "react-icons/bi";
-import Footer from "./Component/Footer/Footer";
-import SuccessStories from "./Component/home/SuccessStories";
+import Footer from "./Components/Footer/Footer";
+import SuccessStories from "./Components/home/SuccessStories";
 import About from "./Pages/About";
+import { ToastContainer } from "react-toastify";
 const App = () => {
   // const { data } = useContext(AppContext);
   const [view, setView] = useState(false);
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      <ToastContainer/>
       <Footer/>
     </BrowserRouter>
   );

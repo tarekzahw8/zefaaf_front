@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import ani1 from '../assets/ImageHomeAnimation.json'
+import ani1 from '../AnimationImage/ImageHomeAnimation.json'
 // import "@lottiefiles/lottie-player";
 import Lottie from "lottie-react";
 import { useTranslation } from 'react-i18next';
-import Header from '../Component/home/Header';
-import Card from '../Component/home/Card';
-import Main from '../Component/home/Main';
-import VideoSection from '../Component/home/VideoSection';
-import StatisticsSection from '../Component/home/StatisticsSection';
-import SuccessStore from '../Component/home/SuccessStories';
+import Header from '../Components/home/Header';
+import Card from '../Components/home/Card';
+import Main from '../Components/home/Main';
+import VideoSection from '../Components/home/VideoSection';
+import StatisticsSection from '../Components/home/StatisticsSection';
+import SuccessStore from '../Components/home/SuccessStories';
 
 const HomePage = () => {
 

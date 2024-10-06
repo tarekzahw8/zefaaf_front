@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/Logo.png";
-import { MdKeyboardArrowDown } from "react-icons/md";
+// import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`Navbar ${navbarScroll} max-md:bg-[#5650ce] shadow-lg z-[99119]  text-white p-4 transition-colors duration-300  fixed top-0 left-0 right-0  ${
+      className={`Navbar ${navbarScroll} max-md:bg-[#5650ce] shadow-lg z-[991]  text-white p-4 transition-colors duration-300  fixed top-0 left-0 right-0  ${
         isMenuOpen ? "h-[100vh] overflow-scroll" : ""
       } flex items-center `}
     >
@@ -45,7 +45,9 @@ const Navbar = () => {
         }  px-4 mx-auto`}
       >
         <div className="max-md:hidden  ">
+<Link to='/'>
           <img src={logo} className="w-[70px] h-full transform" alt="Logo" />
+</Link>
         </div>
 
         <div className="flex md:hidden items-center justify-between w-full">
@@ -89,7 +91,7 @@ const Navbar = () => {
 الباقات
      </Link>
 
-          {/* <div className="relative group">
+          <div className="relative group">
 
             <div className="absolute top-5 z-[99999] w-[200px] hidden group-hover:flex flex-col bg-[#6610f2] text-black mt-2 p-2 rounded shadow-lg">
               <Link
@@ -114,8 +116,10 @@ const Navbar = () => {
                 باقه فضي{" "}
               </Link>
             </div>
-          </div> */}
-          {/* <Link to="/premium" className={` max-md:w-full NavLink ${location.pathname === '/premium'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الباقات</Link> */}
+          </div>
+
+
+
           <Link
             to="/SuccessStories"
             className={` max-md:w-full NavLink ${

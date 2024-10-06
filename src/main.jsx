@@ -7,6 +7,7 @@ import "@lottiefiles/lottie-player";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')).render(
   <AppProvider>
