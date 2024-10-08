@@ -20,6 +20,7 @@ import Conditions from "./Pages/conditions.JSX";
 import Bouquets from "./Pages/Purchase";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
+import ProductPage from "./Pages/ProductPage";
 // import { AppContext } from "./Store/StateData";
 const App = () => {
   // const { user } = useContext(AppContext);
@@ -72,6 +73,8 @@ const App = () => {
         <Route path="/Bouquets" element={<Bouquets />} />
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductPage  />} />
+
         <Route path="/Blog/:id" element={<BlogPosts />} />
         <Route path="*" element={<ERRORPage />} />
       </Routes>

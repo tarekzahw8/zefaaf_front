@@ -159,7 +159,7 @@ const Shop = () => {
           />
           <select
             onChange={(e) => setPriceFilter(e.target.value)}
-            className="border p-2 rounded text-gray-600"
+            className="border py-2   rounded text-gray-600"
           >
             <option value="">فلترة حسب السعر</option>
             <option value="low">أقل من 150</option>
@@ -177,7 +177,7 @@ const Shop = () => {
             to="/Cart"
             className="button_bg relative flex items-center justify-center text-white py-2 px-4 rounded"
           >
-            <div className="absolute top-[-5px] text-center  rounded-full button_bg right-[-5px] flex items-center justify-center">
+            <div className="absolute top-[-5px]   rounded-full button_bg right-[-5px] flex items-center justify-center">
 
             <p className=" text-center w-[20px]  text-sm h-[20px]   ">
 
@@ -202,7 +202,7 @@ const Shop = () => {
               layout === "grid"
                 ? "flex-col flex-wrap  max-md:w-[45%] max-sm:w-full max-lg:w-[30%] w-[240px]"
                 : "flex-row w-full h-[160px]"
-            } items-center justify-around  w-full  transition-transform duration-300 hover:shadow-lg hover:scale-105`}
+            } items-center justify-around  transition-transform duration-300 hover:shadow-lg hover:scale-105`}
           >
             <div className="justify-around h-fit relative  flex items-center flex-col">
               <img
@@ -231,6 +231,9 @@ const Shop = () => {
             >
               Add to Cart
             </button>
+            <Link to={`/product/${product.id}`} className="mt-2 text-blue-400">
+      عرض التفاصيل
+    </Link>
           </div>
         ))}
       </div>

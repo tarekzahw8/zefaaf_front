@@ -35,7 +35,7 @@ console.log(cart)
       </div>
 
       <div className="flex flex-col gap-4 w-[80%] mx-auto mb-10">
-      <h1 className="text-center text-[35px]">منتجاتك </h1>
+      <h1 className="text-center text-[35px]">أكمال عمليه الشراء </h1>
 
         {cart.length > 0 ? (
           cart.map((product) => (
