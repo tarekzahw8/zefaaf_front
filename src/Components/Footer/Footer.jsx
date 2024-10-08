@@ -1,6 +1,9 @@
 import { BsTelegram } from "react-icons/bs";
 import shape from "../../assets/f-shape.png";
 import icon_n from "../../assets/n-icon.png";
+import you from "../../assets/you.png";
+import facebook from "../../assets/OIP.jpeg";
+import telegram from "../../assets/Telegram_logo.svg.webp";
 // import right_shape from '../../assets/right-shape.png'
 import ani1 from "../../AnimationImage/image2.json";
 import ani3 from "../../AnimationImage/image3.json";
@@ -8,8 +11,9 @@ import Lottie from "lottie-react";
 import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
+
   return (
-    <footer className={`${location.pathname != "/login"? "":"hidden"} ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] relative z-[99] overflow-hidden
+    <footer className={`${location.pathname != "/login"? "":"hidden"}  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
      bg-transparent text-white pt-16`}>
       {/* Shapes */}
       <img className="absolute z-[-1] top-0 left-0" src={shape} alt="Shape" />
@@ -44,7 +48,7 @@ const Footer = () => {
                   <p className="text-lg mb-4">
                     اشترك لتلقي بريد إلكتروني شهريًا بأحدث الأخبار!{" "}
                   </p>
-                  <form className="newslater-form flex justify-center">
+                  <form onClick={(e)=>e.preventDefault()} className="newslater-form flex justify-center">
                     <input
                       className="p-3 rounded-r-lg outline-none pt-4 text-[#333] font-bold w-3/4 md:w-full"
                       type="text"
@@ -63,7 +67,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       {/* Footer Links */}
       <div className="w-[90%]  mx-auto px-4">
         <div className="footer-links py-8">
@@ -120,13 +123,25 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="copyright-wrapper py-4">
           <div className="flex justify-center">
-            <div className="w-full lg:w-11/12">
+            <div className="w-full  lg:w-11/12">
               <hr className="border-gray-700" />
             </div>
           </div>
+          <div className="flex max-md:flex-col gap-4 items-center justify-around  w-full py-4">
+<div className="flex items-center justify-around gap-4">
 
-          <div className="flex justify-between py-4">
-            <div className="text-sm text-center w-full">
+<Link to='https://www.youtube.com/@zefaaf'>
+  <img src={you} className="w-10 max-md:w-8 h-8"/>
+</Link>
+<Link to='https://www.facebook.com/zefaaf.net'>
+
+  <img src={facebook} className="w-10 max-md:w-8 h-8 rounded-full"/>
+</Link>
+  <Link to='https://x.com/@zefaaf'>
+  <img src={telegram} className="w-10 max-md:w-8 h-8"/>
+</Link>
+</div>
+            <div className="text-md  text-end max-md:text-center w-full">
               <span>جميع الحقوق محفوظة © 2024 لمنصة </span>
               <a href="#" className="text-blue-600">
                 Zefaaf
@@ -149,6 +164,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+
+
     </footer>
   );
 };

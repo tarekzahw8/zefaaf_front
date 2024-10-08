@@ -9,8 +9,8 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <div className='mt-[100px] w-full'>
-        <div className='w-[80%] max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center justify-between  '>
+    <div className='mt-[150px] w-full'>
+        <div className='w-[80%] mb-16 max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center justify-between  '>
 <div className='w-[50%] max-md:w-full flex flex-col items-start justify-around gap-5'>
 <h3 className='text-[45px] max-md:text-[35px] font-semibold'> من نحن ؟ </h3>
 <p className='text-white text-[16px] max-md:text-[14px]  '
@@ -54,10 +54,10 @@ const About = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8">خدماتنا</h2>
 
-        <div className="bg-white flex items-center justify-center p-8 rounded-lg shadow-lg">
-            <div className=''>
+        <div className="bg-[#6610f2] flex items-center bg_image  justify-center p-8 rounded-lg shadow-lg">
+            <div className='w-[50%] max-md:w-full'>
 
-          <ul className="list-disc list-inside mb-6 text-lg text-gray-700">
+          <ul className="list-disc list-inside mb-6 text-lg text-white">
             <li className="mb-2">التعارف وفق المبادئ والأخلاق الإسلامية.</li>
             <li className="mb-2">الزواج الشرعي المبني على كتاب الله وسنة رسوله ﷺ.</li>
             <li className="mb-2">تقديم الاستشارات والنصائح الفقهية والاجتماعية.</li>
@@ -66,11 +66,11 @@ const About = () => {
           <p className="text-xl font-semibold text-center mb-4">
             زفاف منصة إسلامية شرعية يشرف عليها نخبة من العلماء والدعاة الموثوق بهم، وتهدف إلى تسهيل الزواج الشرعي وفق الضوابط الإسلامية.
           </p>
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-lg text-white mb-4">
             جميع بيانات الأعضاء تخضع للتدقيق لضمان المصداقية والأمان في مجتمع زفاف.
           </p>
           <h3 className="text-2xl font-bold mb-4">دور الهيئة الشرعية لمنصة زفاف:</h3>
-          <ul className="list-disc list-inside text-lg text-gray-700">
+          <ul className="list-disc list-inside text-lg text-white">
             <li className="mb-2">تقديم محتوى هادف ونافع لجميع الأعضاء.</li>
             <li className="mb-2">بث محاضرات ودورات علمية للزوجين.</li>
             <li className="mb-2">ضمان بيئة آمنة لجميع المستخدمين.</li>
@@ -78,8 +78,8 @@ const About = () => {
           </ul>
           </div>
 
-          <div>
-    <img src={groom} alt="" />
+          <div className='w-[50%] max-md:hidden'>
+    <img src={groom} className='w-full h-full' alt="" />
 </div>
         </div>
 
@@ -91,7 +91,7 @@ const About = () => {
 
 
 
-    <div className="max-w-4xl mx-auto p-8 bg-white text-[#5650ce] shadow-lg rounded-t-lg">
+    <div className="max-w-4xl mt-10 mx-auto p-8 bg-white text-[#5650ce] shadow-lg rounded-t-lg">
       <h1 className="text-3xl font-bold text-center mb-6">منصة زفاف</h1>
 
       <p className="text-lg mb-4">

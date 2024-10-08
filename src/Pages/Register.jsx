@@ -47,13 +47,56 @@ const Register = () => {
               <h2 className="text-center text-gray-700 font-bold mb-10 text-[35px]">
                 تسجيل حساب جديد
               </h2>
+              <div className="flex items-center gap-3 justify-between w-full ">
+
               <input
-                className="p-4 shadow-sm  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
+                className="p-4 shadow-sm w-full  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
                 type="text"
-                name="FullName"
-                placeholder="الاسم بالكامل"
+                name="firstName"
+                placeholder="الاسم الاول"
                 required
               />
+
+
+<input
+                className="p-4 shadow-sm w-full  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
+                type="text"
+                name="secondName"
+                placeholder="الاسم الاخير"
+                required
+              />
+              </div>
+              <input
+                className="p-4 shadow-sm w-full  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
+                type="text"
+                name="nikName"
+                placeholder="اسم الكنية (Nik name)"
+                required
+              />
+
+<div className="flex items-center gap-3  justify-between w-full ">
+
+<label className="text-gray-700 w-[20%] text-[18px]">النوع :</label>
+<div className="flex gap-4 w-[40%]">
+
+<input
+  type="checkbox"
+  name="male"
+
+/>
+<label>ذكر</label>
+</div>
+<div className="flex gap-4 w-[40%]">
+
+<input
+  type="checkbox"
+  name="female"
+
+/>
+<label>انثي</label>
+</div>
+
+</div>
               <input
                 className="p-4 shadow-sm  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
                 type="text"
@@ -61,6 +104,9 @@ const Register = () => {
                 placeholder="العمر"
                 required
               />
+
+
+
               <input
                 className="p-4 shadow-sm  outline-none border font-medium border-gray-300 rounded-[15px] focus:border-blue-500"
                 type="text"

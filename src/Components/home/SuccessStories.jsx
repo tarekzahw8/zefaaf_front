@@ -4,13 +4,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import avatar from '../../assets/Avatar zefaaf F3.png'
+import husband from '../../assets/husband.jpg'
 const SuccessStoriesSlider = () => {
   const successStories = [
     {
       image: "https://via.placeholder.com/150",
-      husbandImage: "https://via.placeholder.com/100", // صورة الزوج
-      wifeImage: "https://via.placeholder.com/100", // صورة الزوجة
+      husbandImage:husband, // صورة الزوج
+      wifeImage: avatar, // صورة الزوجة
       name: "محمد أحمد",
       location: "القاهرة، مصر",
       comment:
@@ -20,8 +21,8 @@ const SuccessStoriesSlider = () => {
     },
     {
       image: "https://via.placeholder.com/150",
-      husbandImage: "https://via.placeholder.com/100", // صورة الزوج
-      wifeImage: "https://via.placeholder.com/100", // صورة الزوجة
+      husbandImage:husband, // صورة الزوج
+      wifeImage:avatar, // صورة الزوجة
       name: "محمد أحمد",
       location: "القاهرة، مصر",
       comment:
@@ -31,8 +32,8 @@ const SuccessStoriesSlider = () => {
     },
     {
       image: "https://via.placeholder.com/150",
-      husbandImage: "https://via.placeholder.com/100", // صورة الزوج
-      wifeImage: "https://via.placeholder.com/100", // صورة الزوجة
+      husbandImage:husband, // صورة الزوج
+      wifeImage: avatar, // صورة الزوجة
       name: "محمد أحمد",
       location: "القاهرة، مصر",
       comment:
@@ -42,8 +43,8 @@ const SuccessStoriesSlider = () => {
     },
     {
       image: "https://via.placeholder.com/150",
-      husbandImage: "https://via.placeholder.com/100", // صورة الزوج
-      wifeImage: "https://via.placeholder.com/100", // صورة الزوجة
+      husbandImage:husband, // صورة الزوج
+      wifeImage: avatar, // صورة الزوجة
       name: "محمد أحمد",
       location: "القاهرة، مصر",
       comment:
@@ -53,8 +54,8 @@ const SuccessStoriesSlider = () => {
     },
     {
       image: "https://via.placeholder.com/150",
-      husbandImage: "https://via.placeholder.com/100", // صورة الزوج
-      wifeImage: "https://via.placeholder.com/100", // صورة الزوجة
+      husbandImage:husband, // صورة الزوج
+      wifeImage: avatar, // صورة الزوجة
       name: "محمد أحمد",
       location: "القاهرة، مصر",
       comment:
@@ -91,7 +92,7 @@ const SuccessStoriesSlider = () => {
           <SwiperSlide key={index}>
             <div className="bg-[#5650ce] max-md:w-[90%] mx-auto p-6 rounded-lg shadow-lg text-center relative">
               <div className="flex w-full  shadow-sm justify-around items-center  ">
-                <div className=" flex flex-col  items-center gap-3">
+                <div className=" flex flex-col  w-16 h-16 items-center gap-3">
                   <img
                     src={story.husbandImage}
                     alt="زوج"
@@ -99,17 +100,17 @@ const SuccessStoriesSlider = () => {
                   />
                   <p className="text-white">الزوج</p>
                 </div>
-                <div className=" flex flex-col items-center gap-3">
+                <div className=" flex flex-col w-16 h-16 bg-[#181a3d] rounded-full items-center gap-3">
                   <img
                     src={story.wifeImage}
                     alt="زوجة"
-                    className="w-16 h-16 rounded-full"
+                    className=" rounded-full"
                   />
                   <p className="text-white">الزوجة</p>
                 </div>
               </div>
 
-              <div className="flex items-start text-[12px] mt-3  text-white">
+              <div className="flex items-start text-[12px] mt-12  text-white">
                 {story.date} - {story.time}
               </div>
               <h3 className="text-xl font-semibold">{story.name}</h3>

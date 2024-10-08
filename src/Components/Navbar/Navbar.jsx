@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/Logo.png";
+import { AppContext } from "../../Store/StateData";
 // import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
+  const {user} =useContext(AppContext)
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarScroll, setNavbarScroll] = useState("");
@@ -45,9 +47,9 @@ const Navbar = () => {
         }  px-4 mx-auto`}
       >
         <div className="max-md:hidden  ">
-<Link to='/'>
-          <img src={logo} className="w-[70px] h-full transform" alt="Logo" />
-</Link>
+          <Link to="/">
+            <img src={logo} className="w-[70px] h-full transform" alt="Logo" />
+          </Link>
         </div>
 
         <div className="flex md:hidden items-center justify-between w-full">
@@ -66,6 +68,7 @@ const Navbar = () => {
         {/* Links - Hidden on small screens */}
         <div
           className={`  md:flex md:flex-row     font-medium text-[18px]
+
           ${
             isMenuOpen
               ? "flex flex-col  items-start gap-2 mt-[30px ]   w-full "
@@ -80,17 +83,32 @@ const Navbar = () => {
               location.pathname === "/" ? "active" : ""
             }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
           >
-{t('Home')}
-     </Link>
+            {t("Home")}
+          </Link>
           <Link
-            to="/package"
+            to="/Blog"
             className={` max-md:w-full NavLink ${
               location.pathname === "/package" ? "active" : ""
             }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
           >
-الباقات
-     </Link>
-
+            المقالات
+          </Link>
+          <Link
+            to="/Bouquets"
+            className={` max-md:w-full NavLink ${
+              location.pathname === "/Bouquets" ? "active" : ""
+            }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
+          >
+            الباقات
+          </Link>
+          <Link
+            to="/Shop"
+            className={` max-md:w-full NavLink ${
+              location.pathname === "/Bouquets" ? "active" : ""
+            }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
+          >
+            متجر زفاف
+          </Link>
           {/* <div className="relative group">
 
             <div className="absolute top-5 z-[99999] w-[200px] hidden group-hover:flex flex-col bg-[#6610f2] text-black mt-2 p-2 rounded shadow-lg">
@@ -117,9 +135,8 @@ const Navbar = () => {
               </Link>
             </div>
           </div> */}
+
           {/* <Link to="/premium" className={` max-md:w-full NavLink ${location.pathname === '/premium'? "active": "" }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}>الباقات</Link> */}
-
-
 
           <Link
             to="/SuccessStories"
@@ -129,22 +146,8 @@ const Navbar = () => {
           >
             قصص النجاح
           </Link>
-          <Link
-            to="/articles"
-            className={` max-md:w-full NavLink ${
-              location.pathname === "/articles" ? "active" : ""
-            }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
-          >
-            المقالات
-          </Link>
-          <Link
-            to="/marriage"
-            className={` max-md:w-full NavLink ${
-              location.pathname === "/marriage" ? "active" : ""
-            }  max-md:hover:bg-[#262950] max-md:py-4 max-md:px-2 rounded-xl max-md:mt-10`}
-          >
-            الزواج في ضوء السنه
-          </Link>
+
+
           <Link
             to="/about"
             className={` max-md:w-full NavLink ${
@@ -154,44 +157,50 @@ const Navbar = () => {
             {t("About")}
           </Link>
         </div>
+ {user != null ?
 
+
+<div>profile</div>
+ :
+    <div
+    className={`md:flex  md:flex-row    items-center space-x-0 md:space-x-4 ${
+      isMenuOpen ? "flex pt-10 w-full   gap-4" : "hidden"
+    }   `}
+  >
+    <select className="text-white  hidden outline-none bg-transparent">
+      <option
+        className="text-gray-300"
+        onClick={() => changeLanguage("ar")}
+        value=""
+      >
+        AR
+      </option>
+      <option
+        className="text-gray-300"
+        onClick={() => changeLanguage("em")}
+        value=""
+      >
+        EN
+      </option>
+    </select>
+
+    <Link
+      to="/login"
+      className="button_bg h-[40px] flex items-center text-white font-medium px-4 rounded-[15px]"
+    >
+      {t("Login")}
+    </Link>
+
+    <Link
+      to="/Register"
+      className="button_bg h-[40px] text-white font-medium flex items-center px-4 rounded-[15px]"
+    >
+      {t("Register")}
+    </Link>
+  </div>
+ }
         {/* Buttons */}
-        <div
-          className={` md:flex md:flex-row items-center space-x-0 md:space-x-4 ${
-            isMenuOpen ? "flex pt-10 w-full   gap-4" : "hidden"
-          } md:flex`}
-        >
-          <select className="text-white  hidden outline-none bg-transparent">
-            <option
-              className="text-gray-300"
-              onClick={() => changeLanguage("ar")}
-              value=""
-            >
-              AR
-            </option>
-            <option
-              className="text-gray-300"
-              onClick={() => changeLanguage("em")}
-              value=""
-            >
-              EN
-            </option>
-          </select>
 
-          <Link
-            to="/login"
-            className="button_bg h-[40px] flex items-center text-white font-medium px-4 rounded-[15px]"
-          >
-            {t("Login")}
-          </Link>
-
-          <Link
-            to="/Register"
-            className="button_bg h-[40px] text-white font-medium flex items-center px-4 rounded-[15px]"
-          >
-            {t("Register")}
-          </Link>
-        </div>
       </div>
     </nav>
   );

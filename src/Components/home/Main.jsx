@@ -47,7 +47,7 @@ const Main = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[50%] max-md:w-full pr-16 flex items-center  justify-end">
+        <div className="w-[50%] max-md:w-full mx-auto pr-16 max-md:pr-0 flex items-center  justify-end">
           <Lottie
             className="w-full max-md:w-fit imageCard"
             animationData={ani1}
