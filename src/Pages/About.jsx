@@ -4,10 +4,12 @@ import groom from '../assets/ZEFAAF AVATAR NEW .png'
 import { useTranslation } from 'react-i18next';
 import Lottie from 'lottie-react';
 import ani1 from '../AnimationImage/image1.json'
+import { useContext } from 'react';
+import { AppContext } from '../Store/StateData';
 
 const About = () => {
   const { t } = useTranslation();
-
+const {user} =useContext(AppContext)
   return (
     <div className='mt-[150px] w-full'>
         <div className='w-[80%] mb-16 max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center justify-between  '>
@@ -34,16 +36,25 @@ const About = () => {
 
 
 
-<div className="flex mt-4 gap-10 max-md:gap-[5%] space-x-4">
+    {user != null ? (
+            ""
+          ) : (
+            <div className="flex mt-4 gap-10 max-md:gap-[5%] space-x-4">
+              <Link
+                to="/login"
+                className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]"
+              >
+                {t("Login")}
+              </Link>
 
-<Link to="/login" className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]">
-  {t('Login')}
-</Link>
-
-<Link to="/Register" className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]">
-  {t('Register')}
-</Link>
-</div>
+              <Link
+                to="/Register"
+                className=" button_bg h-[60px] w-[180px] text-center flex items-center justify-center text-white font-medium  px-4 rounded-[15px]"
+              >
+                {t("Register")}
+              </Link>
+            </div>
+          )}
 </div>
 <div className='w-[50%] max-md:w-full flex items-center justify-end'>
 <Lottie className="w-full max-md:w-fit" animationData={ani1} />

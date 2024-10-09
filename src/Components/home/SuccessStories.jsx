@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import avatar from '../../assets/Avatar zefaaf F3.png'
-import husband from '../../assets/husband.jpg'
+import husband from '../../assets/Avatar man with background.jpg'
 const SuccessStoriesSlider = () => {
   const successStories = [
     {
@@ -92,15 +92,15 @@ const SuccessStoriesSlider = () => {
           <SwiperSlide key={index}>
             <div className="bg-[#5650ce] max-md:w-[90%] mx-auto p-6 rounded-lg shadow-lg text-center relative">
               <div className="flex w-full  shadow-sm justify-around items-center  ">
-                <div className=" flex flex-col  w-16 h-16 items-center gap-3">
+              <div className=" flex flex-col w-16 h-16  rounded-full items-center gap-3">
                   <img
                     src={story.husbandImage}
                     alt="زوج"
-                    className="w-16 h-16 rounded-full"
+                    className=" rounded-full"
                   />
-                  <p className="text-white">الزوج</p>
+                  <p className="text-white">الزوجة</p>
                 </div>
-                <div className=" flex flex-col w-16 h-16 bg-[#181a3d] rounded-full items-center gap-3">
+                <div className=" flex flex-col w-16 h-16 bg-pink-300 rounded-full items-center gap-3">
                   <img
                     src={story.wifeImage}
                     alt="زوجة"
@@ -128,7 +128,7 @@ const SuccessStoriesSlider = () => {
               {/* زر "عرض المزيد" */}
               {story.comment.length > 100 && (
                 <button
-                  className="text-blue-500 mt-2"
+                  className="text-white p-2 rounded-md button_bg mt-2"
                   onClick={() =>
                     setExpandedIndex(expandedIndex === index ? null : index)
                   }

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CgShoppingCart } from "react-icons/cg";
 
 const Shop = () => {
+    const { cart, setCart ,data} = useContext(AppContext);
 
   // قائمة المنتجات المبدئية
   const allProducts = [
@@ -21,7 +22,7 @@ const Shop = () => {
       name: "Butterfly Rings",
       price: 200,
       image: rectangle,
-      review: 3,
+      review: 5,
     },
     {
       id: 3,
@@ -80,7 +81,6 @@ const Shop = () => {
       review: 4,
     },
   ];
-  const { cart, setCart } = useContext(AppContext);
   const [searchQuery, setSearchQuery] = useState("");
   const [layout, setLayout] = useState("grid"); // grid أو list
   const [priceFilter, setPriceFilter] = useState("");

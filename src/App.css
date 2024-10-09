@@ -1,14 +1,38 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');:root{
     --mainColor : #5650ce ;
 --cardColor:#181a3d;
 --cardColor1:#20234d;
 --colorText :white ;
 --colorIndigo: #6610f2 ;
 }
+/* تخصيص شريط التمرير في المتصفحات التي تدعم WebKit */
+.scroll-container::-webkit-scrollbar {
+    width: 1px; /* عرض الشريط */
+    border-radius: 5px;/* لون الشريط ولون المسار */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #5650ce; /* لون الشريط */
+    border-radius: 10px; /* الزوايا المدورة */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: transparent; /* خلفية المسار */
+    border-radius: 10px; /* الزوايا المدورة */
+
+}
+
+/* تخصيص شريط التمرير في Firefox */
+.scroll-container {
+    scrollbar-width: thin; /* سمك الشريط */
+    scrollbar-color: #2e2e74 transparent;
+    border-radius: 5px;/* لون الشريط ولون المسار */
+}
 
 ::-webkit-scrollbar {
+    border-radius: 5px;/* لون الشريط ولون المسار */
+
     width: 12px;
     height: 12px;
 }
@@ -35,7 +59,7 @@ html {
 body{
 background-color: var(--cardColor);
 color : var(--colorText);
-font-family: "Vazirmatn", sans-serif;
+font-family: "Almarai", sans-serif;
 }
 .Navbar{
 transition: .3s ease-in;
@@ -174,12 +198,12 @@ box-shadow: 0px 5px 30px 0px rgba(176, 171, 193, 0.4);
 
 
 .imageCard{
-    animation: leftRight 5s linear infinite ;
+    animation: topDown 5s linear infinite ;
 
 }
 
 
-@keyframes leftRight {
+@keyframes topDown {
     0% {
         -webkit-transform: translateY(0px);
         transform: translateY(0px);
@@ -195,3 +219,22 @@ box-shadow: 0px 5px 30px 0px rgba(176, 171, 193, 0.4);
 
 }
 
+.LinkSidebar:hover .icon{
+    animation: leftRight .6s linear infinite ;
+
+}
+@keyframes leftRight {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateX(-5px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateX(0px);
+    }
+
+}
