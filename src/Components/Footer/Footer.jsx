@@ -13,7 +13,7 @@ const Footer = () => {
   const location = useLocation();
 
   return (
-    <footer className={`${location.pathname != "/login"? "":"hidden"}  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
+    <footer className={`${location.pathname != "/login"? "":"hidden"} mr-[240px]  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
      bg-transparent text-white pt-16`}>
       {/* Shapes */}
       <img className="absolute z-[-1] top-0 left-0" src={shape} alt="Shape" />

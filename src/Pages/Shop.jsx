@@ -139,9 +139,10 @@ const Shop = () => {
     return stars.join("");
   };
   const totalItems = cart.reduce((total, product) => total + product.count, 0);
+  const {user} =useContext(AppContext)
 
   return (
-    <div className="">
+    <div className={`l ${user != null ? "mr-[250px] max-md:mr-0":""}`}>
       <div className="header_image h-[350px] flex items-center gap-10 mb-10 flex-col justify-center">
         <h1 className="text-center text-[35px]">مرحبا بك في متجر زفاف</h1>
         <h2 className="text-center text-[25px]">المنتجات</h2>
@@ -191,7 +192,7 @@ const Shop = () => {
 
       {/* عرض المنتجات */}
       <div
-        className={`flex w-[80%] mx-auto justify-start gap-10 mb-10 ${
+        className={`flex ${user != null ? "  w-[100%] justify-center":" justify-start  w-[80%]"}  mx-auto  gap-10 mb-10 ${
           layout === "grid" ? "flex-wrap" : "flex-col  "
         }`}
       >
@@ -229,7 +230,7 @@ const Shop = () => {
               className="button_bg text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
               onClick={() => addToCart(product)}
             >
-              Add to Cart
+              اضف الي السله
             </button>
             <Link to={`/product/${product.id}`} className="mt-2 text-blue-400">
       عرض التفاصيل

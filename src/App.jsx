@@ -59,7 +59,7 @@ const App = () => {
           onClick={scrollToTop}
           className={`   ${
             view ? "fixed" : "hidden"
-          } z-[99999] animate-bounce ${user != null ?"mr-[240px]":"" }  w-[45px] cursor-pointer h-[45px] bottom-[30px]  text-center flex items-center justify-center right-7 button_bg rounded-[5px]  `}
+          } z-[99999] animate-bounce ${user != null ?"mr-[240px] max-md:mr-0":"" }  w-[45px] cursor-pointer h-[45px] bottom-[30px]  text-center flex items-center justify-center right-7 button_bg rounded-[5px]  `}
         >
           <BiArrowToTop className="w-[25px] h-[25px]" />
         </div>

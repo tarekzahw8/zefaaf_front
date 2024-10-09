@@ -10,8 +10,9 @@ import { AppContext } from '../Store/StateData';
 const About = () => {
   const { t } = useTranslation();
 const {user} =useContext(AppContext)
+
   return (
-    <div className='mt-[150px] w-full'>
+    <div className={`mt-[150px] w-full ${user != null ? "mr-[240px] max-md:mr-0":""}`}>
         <div className='w-[80%] mb-16 max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center justify-between  '>
 <div className='w-[50%] max-md:w-full flex flex-col items-start justify-around gap-5'>
 <h3 className='text-[45px] max-md:text-[35px] font-semibold'> من نحن ؟ </h3>

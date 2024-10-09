@@ -5,6 +5,8 @@ import diamond from "../../assets/diamond.svg";
 import sliver from "../../assets/silver-medal-svgrepo-com.svg";
 import Trial from "../../assets/free-trial-svgrepo-com.svg";
 import wove from "../../assets/plan-bg.png";
+import { useContext } from "react";
+import { AppContext } from "../../Store/StateData";
 
 const CardPurchaseAll = () => {
   const bouquetData = [
@@ -50,10 +52,11 @@ const CardPurchaseAll = () => {
       ],
     },
   ];
+  const {user} =useContext(AppContext)
 
   return (
-    <div className="bouquet-section mt-[100px] w-[100%] flex justify-around items-center">
-      <div className="w-[80%] mx-auto flex flex-wrap items-center justify-around gap-8">
+    <div className={`bouquet-section mt-[100px] w-[100%] flex justify-around items-center`}>
+      <div className={`${user !=null?  "ml-[240px] overflow-x-scroll" : ""}w-[80%] mx-auto flex flex-wrap items-center justify-around gap-8`}>
         {bouquetData.map((bouquet, index) => (
           <motion.div
             key={index}

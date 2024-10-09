@@ -1,14 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Store/StateData";
-import { BiArrowBack, BiHome, BiLogOut, BiMenu } from "react-icons/bi";
+import { BiArrowBack, BiLogOut, BiMenu } from "react-icons/bi";
 import { GiAges } from "react-icons/gi";
 import { BsGenderMale } from "react-icons/bs";
 import husband from "../../assets/Avatar man with background.jpg";
 import { CiSettings } from "react-icons/ci";
 import { CgClose } from "react-icons/cg";
 import logo from "../../assets/Logo.png";
-import { PiArticleMedium } from "react-icons/pi";
 
 const SideNavbar = () => {
   const { user, Logout, isOpen, setIsOpen } = useContext(AppContext);
@@ -116,8 +115,7 @@ const SideNavbar = () => {
                   <Link
                     to={path}
                     className={`relative flex items-center LinkSidebar h-12 rounded-[10px] px-2 ${location.pathname === path ? "text-[#181a3da9]" : "text-white"}`}
-                    onClick={toggleSidebar}
-                  >
+>
                     <span
                       className={`absolute w-full justify-between inset-0 flex items-center px-2 transition-transform duration-300 ease-in-out rounded-[10px] ${
                         location.pathname === path
