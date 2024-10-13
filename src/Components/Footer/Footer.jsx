@@ -9,11 +9,13 @@ import ani1 from "../../AnimationImage/image2.json";
 import ani3 from "../../AnimationImage/image3.json";
 import Lottie from "lottie-react";
 import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../../Store/StateData";
 const Footer = () => {
   const location = useLocation();
-
+const {user}= useContext(AppContext)
   return (
-    <footer className={`${location.pathname != "/login"? "":"hidden"} mr-[240px]  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
+    <footer className={`${location.pathname != "/login"? "":"hidden"} ${user != null ?  "mr-[240px] max-md:mr-0":"" }  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
      bg-transparent text-white pt-16`}>
       {/* Shapes */}
       <img className="absolute z-[-1] top-0 left-0" src={shape} alt="Shape" />

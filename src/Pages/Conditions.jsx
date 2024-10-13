@@ -1,8 +1,12 @@
 // import groom from "../assets/ZEFAAF AVATAR NEW .png";
 
+import { useContext } from "react";
+import { AppContext } from "../Store/StateData";
+
 const Conditions = () => {
+  const{user} = useContext(AppContext)
   return (
-    <section className="py-12 mt-[140px]  bg-[#5650ce]">
+    <section className={`py-12 mt-[140px] ${user != null ? "mr-[250px] max-md:mr-0":""}  bg-[#5650ce]"`}>
       <div className="container mx-auto px-4 max-md:px-2">
         <h2 className="text-4xl font-bold text-center mb-8">الشروط والأحكام</h2>
 

@@ -1,4 +1,3 @@
-import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import ani1 from "../../assets/aimg1.png";
 

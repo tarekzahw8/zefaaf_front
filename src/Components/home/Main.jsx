@@ -10,15 +10,15 @@ const Main = () => {
 const {user} = useContext(AppContext)
   return (
     <div className="mt-[100px] w-full">
-      <div className="w-[80%]  max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center  justify-between  ">
+      <div className="w-[90%]  max-md:w-[98%] max-md:gap-[30px] flex mx-auto max-md:flex-col items-center  justify-between  ">
         <div className="w-[50%] max-md:w-full flex flex-col items-start justify-around gap-5">
           <p className="text-violet-600 text-[22px] font-medium">
             قابل أشخاص جدد اليوم!
           </p>
-          <h3 className="text-[45px] max-md:text-[35px] font-semibold">
+          <h3 className="text-[40px] max-md:text-[35px] font-semibold">
             منصة تعزز القيم الإسلامية
           </h3>
-          <p className="text-white text-[16px] max-md:text-[14px]  ">
+          <p className={` ${user != null ? "text-[14px]":"text-[16px]" }text-white  max-md:text-[14px] `}>
             في عصرنا الحديث، أصبحت منصات التعارف جزءًا مهمًا من الحياة
             الاجتماعية، حيث تسهم في توصيل الأفراد الذين يتشاركون القيم والمبادئ.
             "زفاف" هو تطبيق مصمم خصيصًا لمساعدة العزاب في العثور على شريك حياة
@@ -53,7 +53,7 @@ const {user} = useContext(AppContext)
             </div>
           )}
         </div>
-        <div className="w-[50%] max-md:w-full mx-auto pr-16 max-md:pr-0 flex items-center  justify-end">
+        <div className="w-[50%] max-md:w-full mx-auto pr-16 max-md:pr-0 flex items-center max-md:justify-center  justify-end">
           <Lottie
             className="w-full max-md:w-fit imageCard"
             animationData={ani1}

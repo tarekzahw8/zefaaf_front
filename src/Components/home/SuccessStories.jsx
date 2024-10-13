@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -6,6 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import avatar from '../../assets/Avatar zefaaf F3.png'
 import husband from '../../assets/Avatar man with background.jpg'
+import { AppContext } from "../../Store/StateData";
+import { useLocation } from "react-router";
 const SuccessStoriesSlider = () => {
   const successStories = [
     {
@@ -66,9 +68,10 @@ const SuccessStoriesSlider = () => {
   ];
 
   const [expandedIndex, setExpandedIndex] = useState(null);
-
+const {user} =useContext(AppContext)
+const  location = useLocation()
   return (
-    <div className="py-12  bg-[#20234d] mt-[100px]">
+    <div className={`${user  != null && location.pathname === '/SuccessStories' ? "mr-[240px]  max-md:mr-0":""} py-12   bg-[#20234d] mt-[100px]`}>
       <h2 className="text-center text-3xl font-bold mb-8">قصص النجاح</h2>
       <Swiper
         modules={[Navigation, Pagination]}
@@ -86,11 +89,11 @@ const SuccessStoriesSlider = () => {
             slidesPerView: 3,
           },
         }}
-        className="w-full max-w-4xl mx-auto"
+        className="w-full  max-w-4xl mx-auto"
       >
         {successStories.map((story, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#5650ce] max-md:w-[90%] mx-auto p-6 rounded-lg shadow-lg text-center relative">
+            <div className="bg-[#5650ce]  max-md:w-[90%] mx-auto p-6 rounded-lg shadow-lg text-center relative">
               <div className="flex w-full  shadow-sm justify-around items-center  ">
               <div className=" flex flex-col w-16 h-16  rounded-full items-center gap-3">
                   <img

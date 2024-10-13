@@ -3,6 +3,8 @@ import icon1 from "../../assets/blog.jpg";
 import icon2 from "../../assets/hus.jpg";
 import icon3 from "../../assets/5612063800715.jpg";
 import icon4 from "../../assets/اسا.jpeg";
+import { useContext } from "react";
+import { AppContext } from "../../Store/StateData";
 const BlogPosts = () => {
   const { id } = useParams();
   const blogs = [
@@ -40,9 +42,10 @@ const BlogPosts = () => {
 
   ];
   const blog = blogs.find((blog) => blog.id === parseInt(id));
+  const {user}= useContext(AppContext)
   return (
-    <div className="w-full mt-[100px] max-md:mt-[10px]">
-      <div className="w-[80%] mb-5 flex-wrap mx-auto flex gap-[60px] max-md:gap-5 items-start justify-start">
+    <div className={` w-full mt-[100px] max-md:mt-[10px]`}>
+      <div className={` ${user != null ? "mr-[260px] max-md:mr-0":""} w-[80%] mb-5 flex-wrap mx-auto flex gap-[60px] max-md:gap-5 items-start justify-start `}>
         {blog ? (
           <>
             <div className=" h-fit shadow rounded-[25px] w-full max-md:w-full flex flex-col justify-center items-center">

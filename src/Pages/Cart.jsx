@@ -1,11 +1,10 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../Store/StateData";
 import { useNavigate } from "react-router-dom"; // استيراد useNavigate
-import { div } from "framer-motion/client";
 import { BiArrowBack } from "react-icons/bi";
 
 const Cart = () => {
-  const { cart, setCart } = useContext(AppContext);
+  const { cart, setCart , user} = useContext(AppContext);
   const navigate = useNavigate();
 console.log(cart)
   const totalPrice = cart.reduce(
@@ -29,7 +28,7 @@ console.log(cart)
     console.log("Cart updated:", cart);
   }, [cart]);
   return (
-    <div className="cart-page mb-16">
+    <div className={`cart-page mb-16 ${user != null ?"mr-[250px] max-md:mr-0":""}`}>
       <div className="header_image h-[250px] flex items-center gap-10 mb-10 flex-col justify-center">
         <h1 className="text-center text-[35px]">سلة التسوق</h1>
       </div>

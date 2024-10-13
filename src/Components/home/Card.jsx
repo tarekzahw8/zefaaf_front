@@ -16,7 +16,7 @@ const Card = () => {
 
   return (
     <div className="w-full mt-[100px] max-md:mt-[10px]">
-      <div className="w-[80%]   flex-wrap mx-auto flex gap-8 items-center justify-around">
+      <div className="w-[90%]   flex-wrap mx-auto flex gap-8 items-center justify-around">
         {items.map(item => (
           <div key={item.id} className={`BoxCard ${user != null ?"w-[190px] h-fit py-4": "h-[200px] w-[230px]"}  shadow rounded-[25px]  gap-4  max-md:w-full flex flex-col justify-center items-center`}>
             <img src={item.icon} alt={item.text} className="mb-2" />

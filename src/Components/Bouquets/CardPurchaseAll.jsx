@@ -4,7 +4,6 @@ import gold from "../../assets/Golden.png";
 import diamond from "../../assets/diamond.svg";
 import sliver from "../../assets/silver-medal-svgrepo-com.svg";
 import Trial from "../../assets/free-trial-svgrepo-com.svg";
-import wove from "../../assets/plan-bg.png";
 import { useContext } from "react";
 import { AppContext } from "../../Store/StateData";
 
@@ -55,8 +54,8 @@ const CardPurchaseAll = () => {
   const {user} =useContext(AppContext)
 
   return (
-    <div className={`bouquet-section mt-[100px] w-[100%] flex justify-around items-center`}>
-      <div className={`${user !=null?  "ml-[240px] overflow-x-scroll" : ""}w-[80%] mx-auto flex flex-wrap items-center justify-around gap-8`}>
+    <div className={`bouquet-section mt-[100px] ${user != null  ?  "":  "" } w-[100%] flex justify-around items-center`}>
+      <div className={`w-[85%] ${user != null  ?  "  ml-10 max-md:mr-10":  "" }  mx-auto flex flex-wrap items-center justify-around gap-8`}>
         {bouquetData.map((bouquet, index) => (
           <motion.div
             key={index}
@@ -81,7 +80,7 @@ const CardPurchaseAll = () => {
                 </p>
               ))}
             </div>
-<div className="flex items-end gap-2">
+<div className="flex relative items-end gap-2">
 
             <p className="text-[#f7f7f7] font-bold text-[24px] mt-4">{bouquet.price} </p>
             <span className="text-white"> / شهر </span>
@@ -89,7 +88,6 @@ const CardPurchaseAll = () => {
             <button className="mt-6 button_bg  z-20 hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-lg transition-colors">
               اشترِ الآن
             </button>
-<img src={wove} className="absolute bottom-0  w-full " alt="" />
           </motion.div>
         ))}
       </div>

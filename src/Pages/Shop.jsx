@@ -149,7 +149,7 @@ const Shop = () => {
       </div>
 
       {/* البحث */}
-      <div className="flex justify-between mx-auto w-[80%] mb-4 gap-4">
+      <div className="flex max-md:w-[95%] max-md:flex-col justify-between mx-auto w-[80%] mb-4 gap-4">
         <div className="flex gap-4 items-center ">
           <input
             type="text"
@@ -167,7 +167,7 @@ const Shop = () => {
             <option value="high">أعلى من 150</option>
           </select>
         </div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 max-md:items-center max-md:justify-around max-md:w-full ">
           <button
             className="button_bg text-white py-2 px-4 rounded"
             onClick={() => setLayout(layout === "grid" ? "list" : "grid")}
@@ -201,20 +201,23 @@ const Shop = () => {
             key={product.id}
             className={`bg-[#20234d] pb-3   rounded-[10px] flex ${
               layout === "grid"
-                ? "flex-col flex-wrap  max-md:w-[45%] max-sm:w-full max-lg:w-[30%] w-[240px]"
+                ? "flex-col flex-wrap   max-md:w-[45%]  max-sm:w-[90%]  max-lg:w-[30%] w-[240px]"
                 : "flex-row w-full h-[160px]"
-            } items-center justify-around  transition-transform duration-300 hover:shadow-lg hover:scale-105`}
+            } items-center justify-around  transition-transform duration-300 hover:shadow-lg `}
           >
-            <div className="justify-around h-fit relative  flex items-center flex-col">
+            <div className="justify-around  h-fit relative w-full  flex items-center flex-col">
+              <div className="overflow-hidden">
+
               <img
                 src={product.image}
                 alt={product.name}
                 className={`${
-                  layout === "grid" ? "w-full " : "h-[130px] "
-                }  object-cover mb-4 rounded`}
-              />
+                  layout === "grid" ? "w-full  " : "h-[130px] "
+                }  object-cover mb-4  rounded transition-all duration-500  hover:scale-105`}
+                />
+                </div>
               <div className="  w-[60px] h-[60px] rounded-full absolute button_bg flex mb-4 bottom-[-20px] right-2 items-center justify-center ">
-                <p className="text-gray-300   font-bold text-[19px]  ">
+                <p className="text-gray-300  z-[1000] font-bold text-[19px]  ">
                   ${product.price}
                 </p>
               </div>
@@ -226,15 +229,24 @@ const Shop = () => {
               {renderStars(product.review)}{" "}
               <span className="text-white">| 229 review</span>{" "}
             </p>
+            <div className="flex items-center w-full justify-around">
+            <Link to={`/product/${product.id}`} className=" text-blue-400">
+
             <button
-              className="button_bg text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+              className="button_bg text-white py-2 px-1 rounded hover:bg-blue-600 transition-colors duration-300"
+              >
+عرض التفاصيل            </button>
+
+</Link>
+
+            <button
+              className="button_bg text-white py-2 px-1 rounded hover:bg-blue-600 transition-colors duration-300"
               onClick={() => addToCart(product)}
-            >
+              >
               اضف الي السله
             </button>
-            <Link to={`/product/${product.id}`} className="mt-2 text-blue-400">
-      عرض التفاصيل
-    </Link>
+              </div>
+
           </div>
         ))}
       </div>

@@ -1,8 +1,12 @@
 // import groom from "../assets/ZEFAAF AVATAR NEW .png";
 
+import { useContext } from "react";
+import { AppContext } from "../Store/StateData";
+
 const Privacy = () => {
+  const {user}=useContext(AppContext)
   return (
-    <section className="py-12 mt-[140px]  bg-[#5650ce]">
+    <section className={`py-12 mt-[140px]  bg-[#5650ce] ${user != null ? "mr-[240px] max-md:mr-0" : ""}`}>
       <div className="container mx-auto px-4 max-md:px-2">
         <h2 className="text-4xl font-bold text-center mb-8">سياسة الخصوصية
         </h2>

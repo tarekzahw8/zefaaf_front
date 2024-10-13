@@ -1,240 +1,274 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');:root{
-    --mainColor : #5650ce ;
---cardColor:#181a3d;
---cardColor1:#20234d;
---colorText :white ;
---colorIndigo: #6610f2 ;
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+  --mainColor: #5650ce;
+  --cardColor: #181a3d;
+  --cardColor1: #20234d;
+  --colorText: white;
+  --colorIndigo: #6610f2;
 }
 /* تخصيص شريط التمرير في المتصفحات التي تدعم WebKit */
 .scroll-container::-webkit-scrollbar {
-    width: 1px; /* عرض الشريط */
-    border-radius: 5px;/* لون الشريط ولون المسار */
+  width: 1px; /* عرض الشريط */
+  border-radius: 5px; /* لون الشريط ولون المسار */
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-    background-color: #5650ce; /* لون الشريط */
-    border-radius: 10px; /* الزوايا المدورة */
+  background-color: #5650ce; /* لون الشريط */
+  border-radius: 10px; /* الزوايا المدورة */
 }
 
 .scroll-container::-webkit-scrollbar-track {
-    background: transparent; /* خلفية المسار */
-    border-radius: 10px; /* الزوايا المدورة */
-
+  background: transparent; /* خلفية المسار */
+  border-radius: 10px; /* الزوايا المدورة */
 }
 
 /* تخصيص شريط التمرير في Firefox */
 .scroll-container {
-    scrollbar-width: thin; /* سمك الشريط */
-    scrollbar-color: #2e2e74 transparent;
-    border-radius: 5px;/* لون الشريط ولون المسار */
+  scrollbar-width: thin; /* سمك الشريط */
+  scrollbar-color: #2e2e74 transparent;
+  border-radius: 5px; /* لون الشريط ولون المسار */
 }
 
 ::-webkit-scrollbar {
-    border-radius: 5px;/* لون الشريط ولون المسار */
+  border-radius: 5px; /* لون الشريط ولون المسار */
 
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-    border: 3px solid #f1f1f1;
+  background-color: #888;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 html {
-    scrollbar-color: #888 #f1f1f1;
-    scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  scrollbar-width: thin;
 }
 
-body{
-background-color: var(--cardColor);
-color : var(--colorText);
-font-family: "Almarai", sans-serif;
+body {
+  background-color: var(--cardColor);
+  color: var(--colorText);
+  font-family: "Almarai", sans-serif;
 }
-.Navbar{
-transition: .3s ease-in;
-height: 80px;
+.Navbar {
+  transition: 0.3s ease-in;
+  height: 80px;
 }
-.Navbar img{
-    transition: .3s ease-in;
+.Navbar img {
+  transition: 0.3s ease-in;
 }
-.Navbar img:hover{
-    scale: 1.1;
+.Navbar img:hover {
+  scale: 1.1;
 }
-.home_section{
-    background-image: url('./assets/hero-banner.png');
-    padding: 120px 0 120px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-
+.home_section {
+  background-image: url("./assets/hero-banner.png");
+  padding: 120px 0 120px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
-.bg_image{
-    background-image: url('./assets/heartshape.png');
-    padding: 120px 0 120px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-
+.bg_image {
+  background-image: url("./assets/heartshape.png");
+  padding: 120px 0 120px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 
-.button_bg{
-    background-image: linear-gradient(166deg, rgb(242, 40, 118) 0%, rgb(148, 45, 217) 100%);
-    transition: 0.3s ease;
+.button_bg {
+  background-image: linear-gradient(
+    166deg,
+    rgb(242, 40, 118) 0%,
+    rgb(148, 45, 217) 100%
+  );
+  transition: 0.3s ease;
+}
+.button_bg:hover {
+  background-image: linear-gradient(
+    166deg,
+    rgb(148, 45, 217) 0%,
+    rgb(242, 40, 118) 100%
+  );
+}
+.buttonCard {
+  position: relative;
+}
+.buttonCard::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 80%;
+  margin-inline: auto;
+  background: white;
+  bottom: -20px;
+  right: 15px;
+}
 
+.NavLink {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
 }
-.button_bg:hover{
-    background-image: linear-gradient(166deg, rgb(148, 45, 217)  0%, rgb(242, 40, 118)  100%);
-
+.NavLink::after {
+  content: "";
+  position: absolute;
+  right: 0%;
+  bottom: -90%;
+  width: 0;
+  background-color: white;
+  height: 2px;
+  transition: width 0.3s ease, left 0.3s ease;
 }
-.buttonCard{
-    position: relative;
-}
-.buttonCard::after{
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 80%;
-    margin-inline:auto ;
-background: white;
-bottom: -20px;
-right: 15px;
-}
-
-
-.NavLink{
-    color: white;
-    text-decoration: none;
-position: relative;
-display: inline-block;
-}
-.NavLink::after{
-    content: '';
-position: absolute;
-right: 0%;
-bottom: -90%;
-width: 0;
-background-color: white;
-height: 2px;
-transition: width 0.3s ease, left 0.3s ease;
-}
-@media (max-width :600px) {
-    .NavLink::after{
-        content: '';
-bottom: -50%;
-    }
-
+@media (max-width: 600px) {
+  .NavLink::after {
+    content: "";
+    bottom: -50%;
+  }
 }
 .NavLink:hover::after,
-.NavLink.active::after{
-width: 100%;
-left: 0;
-color: #000;
+.NavLink.active::after {
+  width: 100%;
+  left: 0;
+  color: #000;
 }
 
 .group:hover .group-hover\\:flex {
-    display: flex;
-  }
-
-  .group-hover\\:flex {
-    display: none;
-  }
-
-  .group .group-hover\\:flex {
-    display: none;
-  }
-
-  .group:hover .group-hover\\:flex {
-    display: flex;
-  }
-  .BoxCard{
-
-    transition: 0.3s ease;
-    background-color:var(--cardColor1) ;
-  }
-  .BoxCard img{
-    animation: leftRight 5s linear infinite ;
-
-  }
-.BoxCard:hover{
-box-shadow: 0px 5px 30px 0px rgba(176, 171, 193, 0.4);
-}
-.bgVideo{
-    padding:  0px 100px;
-    background: url(./assets/bg-img.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-
-}
-.header_image{
-    background: url(./assets/bc-dark.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: bottom;
+  display: flex;
 }
 
-
-
-
-
-.imageCard{
-    animation: topDown 5s linear infinite ;
-
+.group-hover\\:flex {
+  display: none;
 }
 
+.group .group-hover\\:flex {
+  display: none;
+}
+
+.group:hover .group-hover\\:flex {
+  display: flex;
+}
+.BoxCard {
+  transition: 0.3s ease;
+  background-color: var(--cardColor1);
+}
+.BoxCard img {
+  animation: leftRight 5s linear infinite;
+}
+.BoxCard:hover {
+  box-shadow: 0px 5px 30px 0px rgba(176, 171, 193, 0.4);
+}
+.bgVideo {
+  padding: 0px 100px;
+  background: url(./assets/bg-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.header_image {
+  background: url(./assets/bc-dark.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.imageCard {
+  animation: topDown 5s linear infinite;
+}
 
 @keyframes topDown {
-    0% {
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-    }
-    50% {
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px);
-    }
-    100% {
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-    }
-
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }
 
-.LinkSidebar:hover .icon{
-    animation: leftRight .6s linear infinite ;
-
+.LinkSidebar:hover .icon {
+  animation: leftRight 0.6s linear infinite;
 }
 @keyframes leftRight {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateX(0px);
+  }
+}
+
+
+.square {
+    animation: scaleAnimation 3s infinite ease-in-out, colorAnimation 4s infinite ease-in-out;
+    transition: transform 0.3s ease;
+  }
+
+@keyframes scaleAnimation {
     0% {
-        -webkit-transform: translateY(0px);
-        transform: translateX(0px);
+      transform: translateY(10px);
+transform: rotate(60deg);
+      stroke: #000000;
+    }
+    25%{
+        transform: rotate(120deg);
+
     }
     50% {
-        -webkit-transform: translateY(-10px);
-        transform: translateX(-5px);
+      transform: translateY(20px);
+      stroke: #FF5733;
+      /* transform: rotate(220deg); */
+
     }
     100% {
-        -webkit-transform: translateY(0px);
-        transform: translateX(0px);
-    }
+      transform: scale(15px);
+      stroke: #000000;
+      transform: rotate(360deg);
 
-}
+    }
+  }
+
+  /* تغيير ألوان التعبئة */
+  @keyframes colorAnimation {
+    0% {
+      fill: #FF0000;
+      stroke: red;
+    }
+    50% {
+
+      fill: #00FF00;
+    }
+    100% {
+      fill: #0000FF;
+    }
+  }

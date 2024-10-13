@@ -53,31 +53,31 @@ const CardBlog = () => {
 
   return (
     <div className="w-full mt-[100px] max-md:mt-[80px]">
-      <div className="w-[80%] max-md:w-[90%] mb-5 flex-wrap mx-auto flex gap-[60px] max-md:gap-5 items-start justify-start">
-        <div className=" flex  w-full items-center gap-2 justify-center flex-wrap ">
+      <div className="w-[97%] max-md:w-[90%] mb-5 flex-wrap mx-auto flex gap-[20px] max-md:gap-5 items-center justify-around">
+        <div className=" flex  w-full items-center gap-4 md:gap-8 md:px-4 justify-center max-md:flex-wrap">
           <button
-            className="rounded-md w-[48%] button_bg py-4 active:buttonCard px-4"
+            className="rounded-md max-md:w-[47%] w-full button_bg py-4 active:buttonCard px-4"
             onClick={() => filterItems("كل المقالات")}
           >
             كل المقالات
           </button>
 
           <button
-            className="rounded-md w-[48%]   button_bg py-4 px-4"
+            className="rounded-md max-md:w-[47%] w-full   button_bg py-4 px-4"
             onClick={() => filterItems("إستشارات أسرية")}
           >
             إستشارات أسرية
           </button>
 
           <button
-            className="rounded-md  w-[48%]  button_bg py-4 px-4"
+            className="rounded-md  max-md:w-[47%] w-full  button_bg py-4 px-4"
             onClick={() => filterItems("صفات الزوج الصالح")}
           >
             صفات الزوج الصالح
           </button>
 
           <button
-            className="rounded-md w-[48%]  button_bg py-4 px-4"
+            className="rounded-md max-md:w-[47%] w-full  button_bg py-4 px-4"
             onClick={() => filterItems("الصحة الزوجية")}
           >
             الصحة الزوجيــة
