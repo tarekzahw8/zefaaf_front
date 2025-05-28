@@ -6,7 +6,7 @@ import icon3 from '../../assets/stat03.png';
 import { useContext, useEffect, useRef, useState } from "react";
 import { AppContext } from "../../Store/StateData";
 
-const StatisticsSection = () => {
+const Card = () => {
   const cardData = [
     { title: "تواصلات ناجحة", end: 87437, icon: icon1 },
     { title: "عضو مسجل", end: 130000, icon: icon2 },
@@ -53,4 +53,4 @@ const StatisticsSection = () => {
   );
 };
 
-export default StatisticsSection;
+export default Card;

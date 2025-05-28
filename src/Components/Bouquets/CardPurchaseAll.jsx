@@ -55,7 +55,7 @@ const CardPurchaseAll = () => {
 
   return (
     <div className={`bouquet-section mt-[100px] ${user != null  ?  "":  "" } w-[100%] flex justify-around items-center`}>
-      <div className={`w-[85%] ${user != null  ?  "  ml-10 max-md:mr-10":  "" }  mx-auto flex flex-wrap items-center justify-around gap-8`}>
+      <div className={`${user != null  ?  "  w-[100%] ":  "w-[85%]" }  mx-auto flex flex-wrap items-center justify-around gap-8`}>
         {bouquetData.map((bouquet, index) => (
           <motion.div
             key={index}

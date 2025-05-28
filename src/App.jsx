@@ -24,7 +24,12 @@ const Cart = lazy(() => import("./Pages/Cart"));
 const ProductPage = lazy(() => import("./Pages/ProductPage"));
 import { AppContext } from "./Store/StateData";
 import VerifyEmail from "./Pages/VerifyEmail";
-import Support from "./Pages/support";
+import Support from "./Pages/Support";
+import Sharia from "./Pages/Sharia";
+import Consultations from "./Pages/Consultations";
+import Agents from "./Pages/Agents";
+import Message from "./Pages/Message";
+import FilterComponent from "./Components/Search/SearchComponents";
 const SideNavbar = lazy(() => import("./Components/Navbar/SliderNavbar"));
 
 const App = () => {
@@ -54,6 +59,7 @@ const App = () => {
   }, [view]);
 
   return (
+
     <BrowserRouter>
       <Suspense
         fallback={
@@ -72,6 +78,7 @@ const App = () => {
         >
           <BiArrowToTop className="w-[25px] h-[25px]" />
         </div>
+        <div className={`${user != null ? "mr-[250px] max-md:mr-0":""}`}>
 
         {user != null ? <SideNavbar /> : <Navbar />}
 
@@ -102,6 +109,11 @@ const App = () => {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/verify" element={<VerifyEmail />} />
           <Route path="/Support" element={<Support />} />
+          <Route path="/Sharia" element={<Sharia />} />
+          <Route path="/Consultations" element={<Consultations />} />
+          <Route path="/Agents" element={<Agents />} />
+          <Route path="/message" element={<Message />} />
+          <Route path="/search" element={<FilterComponent />} />
 
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/Blog/:id" element={<BlogPosts />} />
@@ -110,6 +122,7 @@ const App = () => {
 
         <ToastContainer />
         <Footer />
+        </div>
       </Suspense>
     </BrowserRouter>
   );

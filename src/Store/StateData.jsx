@@ -64,7 +64,7 @@ export const AppProvider = ({ children }) => {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${token}`,
-            }
+            },
           }
         );
         if (response.status !== 200) {
@@ -85,6 +85,9 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  // code the filter latest subscribe
+  // const customerCountry = user.country;
+  // const countryData = data.filter((country) => country.name === customerCountry);
   return (
     <AppContext.Provider
       value={{

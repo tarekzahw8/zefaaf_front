@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [startDate, setStartDate] = useState(null);
@@ -170,6 +171,13 @@ const Register = () => {
                 تسجيل حساب
               </button>
             </form>
+       
+            <p className="text-center mt-3">
+              لديك حساب …
+              <Link className="text-indigo-500" to="/login">
+                سجل دخول{" "}
+              </Link>
+            </p>
           </div>
         </section>
       </div>

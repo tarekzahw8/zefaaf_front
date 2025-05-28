@@ -103,7 +103,7 @@ const ProductPage = () => {
   return (
     <div
       className={`container ${
-        user ? "w-[80%] max-md:w-full max-md:mr-0 mr-[20%]" : ""
+        user ? "" : ""
       } mt-[100px] mx-auto p-6`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

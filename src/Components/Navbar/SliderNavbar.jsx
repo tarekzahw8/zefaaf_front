@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Store/StateData";
 import { BiArrowBack, BiLogOut, BiMenu } from "react-icons/bi";
 import { GiAges } from "react-icons/gi";
-import { BsGenderMale } from "react-icons/bs";
+import { BsFillPersonFill, BsGenderMale } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
 import { CgClose } from "react-icons/cg";
 import logo from "../../assets/Logo.png";
@@ -91,7 +91,8 @@ const SideNavbar = () => {
                 </h3>
                 <div className="flex items-center justify-center gap-2 mt-2">
                   <span className="flex gap-1 items-center">
-                    <GiAges />
+                  <BsFillPersonFill className="bg-[#5650ce] rounded" />
+
                     <p className="text-sm text-gray-300">
                       {user.age || "30"} سنة
                     </p>
@@ -131,6 +132,7 @@ const SideNavbar = () => {
             <ul className="flex flex-col w-full px-4 h-full gap-2">
               {[
                 "/",
+                "/search",
                 "/Blog",
                 "/Bouquets",
                 "/Shop",
@@ -161,6 +163,7 @@ const SideNavbar = () => {
                     >
                       {path === "/" && "الصفحه الرئيسية"}
                       {path === "/Blog" && "المقالات"}
+                      {path === "/search" && "ابحث عن نصفك الاخر"}
                       {path === "/Bouquets" && "الباقات"}
                       {path === "/Shop" && "متجر زفاف"}
                       {path === "/Support" && "الدعم التقني"}

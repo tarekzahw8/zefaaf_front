@@ -6,9 +6,13 @@ const Blog = () => {
   const {user} =useContext(AppContext)
 
   return (
-    <section    className={`${user != null ? "mr-[240px] max-md:mr-0":""}`}
+    <section    className={` `}
 >
-      <div className="pt-10">
+  <div className="">
+
+  <h4 className="text-center  font-semibold mt-[20px] text-[55px]">المقالات</h4>
+  </div>
+      <div className="">
         <CardBlog />
       </div>
     </section>

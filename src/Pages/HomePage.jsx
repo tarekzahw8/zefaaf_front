@@ -1,18 +1,18 @@
 // import "@lottiefiles/lottie-player";
-import { useContext } from 'react';
-import Header from '../Components/home/Header';
-import Card from '../Components/home/Card';
-import Main from '../Components/home/Main';
-import VideoSection from '../Components/home/VideoSection';
-import StatisticsSection from '../Components/home/StatisticsSection';
-import SuccessStore from '../Components/home/SuccessStories';
-import { AppContext } from '../Store/StateData';
-import { motion } from 'framer-motion'; // استيراد framer-motion
-import SliderNawJoin from '../Ui/SliderNawJoin';
-import Download from '../Components/DownloadSection/Download';
+// import { useContext } from 'react';
+import Header from "../Components/home/Header";
+import Card from "../Components/home/Card";
+import Main from "../Components/home/Main";
+import VideoSection from "../Components/home/VideoSection";
+import StatisticsSection from "../Components/home/StatisticsSection";
+import SuccessStore from "../Components/home/SuccessStories";
+// import { AppContext } from '../Store/StateData';
+import { motion } from "framer-motion"; // استيراد framer-motion
+import SliderNawJoin from "../Ui/SliderNawJoin";
+import Download from "../Components/DownloadSection/Download";
 
 const HomePage = () => {
-  const { user } = useContext(AppContext);
+  // const { user } = useContext(AppContext);
 
   // إعداد الرسوم المتحركة لكل قسم
   const sectionVariants = {
@@ -25,7 +25,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className={`${user != null ? "mr-[240px] max-md:mr-0" : ""}`}>
+    <div className={``}>
       <section className="flex w-full items-center home_section justify-around">
         <Header />
       </section>
@@ -59,7 +59,6 @@ const HomePage = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <section>
-
           <VideoSection />
         </section>
       </motion.div>
@@ -69,7 +68,7 @@ const HomePage = () => {
         variants={sectionVariants}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <section className='mt-10' >
+        <section className="mt-10">
           <SliderNawJoin />
         </section>
       </motion.div>
@@ -84,16 +83,7 @@ const HomePage = () => {
         </section>
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={sectionVariants}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <section>
-          <StatisticsSection />
-        </section>
-      </motion.div>
+    
 
       <motion.div
         initial="hidden"

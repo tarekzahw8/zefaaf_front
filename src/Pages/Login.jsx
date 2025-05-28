@@ -4,6 +4,7 @@ import login from "../assets/bride-groom-getting-married.png";
 import { useContext, useState } from "react";
 import { AppContext } from "../Store/StateData";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { setUser, setToken } = useContext(AppContext);
@@ -123,7 +124,9 @@ toast.error("حاول مرة أخرى بعد قليل");
               {errors.password && (
                 <span className="text-red-500">{errors.password}</span>
               )}
-
+              <p className="text-start text-indigo-500 ">
+              <Link>نسيت كلمة المرور ؟</Link>
+            </p>
               <button
                 className="p-4 button_bg text-white rounded-[15px] hover:scale-105 duration-500 transition"
                 onClick={handleLogin}
@@ -133,6 +136,12 @@ toast.error("حاول مرة أخرى بعد قليل");
               </button>
             </div>
           </div>
+          <p className="text-center mt-3">
+
+          ليس لديك حساب … 
+
+          <Link  className="text-indigo-500" to='/Register'>سجل الآن مجاناً</Link>
+          </p>
         </section>
       </div>
       <ToastContainer />

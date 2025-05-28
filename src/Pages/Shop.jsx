@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { CgShoppingCart } from "react-icons/cg";
 
 const Shop = () => {
-    const { cart, setCart ,data} = useContext(AppContext);
+  const { cart, setCart } = useContext(AppContext);
 
   // قائمة المنتجات المبدئية
   const allProducts = [
@@ -139,17 +139,17 @@ const Shop = () => {
     return stars.join("");
   };
   const totalItems = cart.reduce((total, product) => total + product.count, 0);
-  const {user} =useContext(AppContext)
+  const { user } = useContext(AppContext);
 
   return (
-    <div className={`l ${user != null ? "mr-[250px] max-md:mr-0":""}`}>
+    <div className={``}>
       <div className="header_image h-[350px] flex items-center gap-10 mb-10 flex-col justify-center">
         <h1 className="text-center text-[35px]">مرحبا بك في متجر زفاف</h1>
         <h2 className="text-center text-[25px]">المنتجات</h2>
       </div>
 
       {/* البحث */}
-      <div className="flex max-md:w-[95%] max-md:flex-col justify-between mx-auto w-[80%] mb-4 gap-4">
+      <div className="flex max-md:w-[95%] max-lg:flex-col justify-between mx-auto w-[80%] mb-4 gap-4">
         <div className="flex gap-4 items-center ">
           <input
             type="text"
@@ -179,11 +179,9 @@ const Shop = () => {
             className="button_bg relative flex items-center justify-center text-white py-2 px-4 rounded"
           >
             <div className="absolute top-[-5px]   rounded-full button_bg right-[-5px] flex items-center justify-center">
-
-            <p className=" text-center w-[20px]  text-sm h-[20px]   ">
-
-            {totalItems}
-            </p>
+              <p className=" text-center w-[20px]  text-sm h-[20px]   ">
+                {totalItems}
+              </p>
             </div>
             <CgShoppingCart />
           </Link>
@@ -192,7 +190,9 @@ const Shop = () => {
 
       {/* عرض المنتجات */}
       <div
-        className={`flex ${user != null ? "  w-[100%] justify-center":" justify-start  w-[80%]"}  mx-auto  gap-10 mb-10 ${
+        className={`flex ${
+          user != null ? "  w-[100%] justify-center" : " justify-start  w-[80%]"
+        }  mx-auto  gap-10 mb-10 ${
           layout === "grid" ? "flex-wrap" : "flex-col  "
         }`}
       >
@@ -201,21 +201,20 @@ const Shop = () => {
             key={product.id}
             className={`bg-[#20234d] pb-3   rounded-[10px] flex ${
               layout === "grid"
-                ? "flex-col flex-wrap   max-md:w-[45%]  max-sm:w-[90%]  max-lg:w-[30%] w-[240px]"
+                ? "flex-col flex-wrap  max-lg:w-[40%] max-md:w-[45%]  max-sm:w-[90%]   w-[240px]"
                 : "flex-row w-full h-[160px]"
             } items-center justify-around  transition-transform duration-300 hover:shadow-lg `}
           >
             <div className="justify-around  h-fit relative w-full  flex items-center flex-col">
               <div className="overflow-hidden">
-
-              <img
-                src={product.image}
-                alt={product.name}
-                className={`${
-                  layout === "grid" ? "w-full  " : "h-[130px] "
-                }  object-cover mb-4  rounded transition-all duration-500  hover:scale-105`}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className={`${
+                    layout === "grid" ? "w-full  " : "h-[130px] "
+                  }  object-cover mb-4  rounded transition-all duration-500  hover:scale-105`}
                 />
-                </div>
+              </div>
               <div className="  w-[60px] h-[60px] rounded-full absolute button_bg flex mb-4 bottom-[-20px] right-2 items-center justify-center ">
                 <p className="text-gray-300  z-[1000] font-bold text-[19px]  ">
                   ${product.price}
@@ -229,24 +228,23 @@ const Shop = () => {
               {renderStars(product.review)}{" "}
               <span className="text-white">| 229 review</span>{" "}
             </p>
-            <div className="flex items-center w-full justify-around">
-            <Link to={`/product/${product.id}`} className=" text-blue-400">
-
-            <button
-              className="button_bg text-white py-2 px-1 rounded hover:bg-blue-600 transition-colors duration-300"
+            <div className="flex  max-lg:flex-col max-lg:gap-4 w-full  max-lg:justify-around  items-center justify-center pr-2">
+              <Link
+                to={`/product/${product.id}`}
+                className=" text-blue-400   max-lg:w-full  max-lg:flex max-lg:items-center"
               >
-عرض التفاصيل            </button>
+                <button className="button_bg text-white py-2 max-lg:w-[80%] mx-auto px-1 rounded hover:bg-blue-600 transition-colors duration-300">
+                  عرض التفاصيل{" "}
+                </button>
+              </Link>
 
-</Link>
-
-            <button
-              className="button_bg text-white py-2 px-1 rounded hover:bg-blue-600 transition-colors duration-300"
-              onClick={() => addToCart(product)}
+              <button
+                className="button_bg text-white py-2 max-lg:w-[80%] mx-auto px-1 rounded hover:bg-blue-600 transition-colors duration-300"
+                onClick={() => addToCart(product)}
               >
-              اضف الي السله
-            </button>
-              </div>
-
+                اضف الي السله
+              </button>
+            </div>
           </div>
         ))}
       </div>

@@ -6,8 +6,8 @@ const Download = () => {
   return (
     <div className="w-full  bg-[#20234d] py-2 ">
 
-      <section className="flex items-center mb-10 justify-around max-md:flex-col  rounded-[25px] w-[90%] px-4 mx-auto">
-        <div className="w-[50%] max-md:w-full flex flex-col gap-5  justify-between h-full ">
+      <section className="flex items-center mb-10 justify-around max-lg:flex-col  rounded-[25px] w-[90%] px-4 mx-auto">
+        <div className="w-[50%] max-lg:w-full flex flex-col gap-5  justify-between h-full ">
           <p className="text-[19px] text-[#6610f2]">تطبيق زفاف</p>
           <h3 className="text-[26px] font-bold">
             لمساعدتك على البحث عن نصفك الآخر بطريقة جادة و سهلة و بخصوصية عالية
@@ -35,7 +35,7 @@ const Download = () => {
 
         </div>
 
-        <div className=" flex items-start  justify-start  w-[50%] max-md:w-full">
+        <div className=" flex items-start  justify-start  w-[50%] max-lg:w-full">
           <img src={mobile} className="w-fit rounded-xl  h-[450px]" alt="" />
         </div>
       </section>

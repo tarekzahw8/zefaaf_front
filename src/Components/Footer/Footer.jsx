@@ -1,21 +1,19 @@
-import { BsTelegram } from "react-icons/bs";
+import { BsTelegram, BsYoutube } from "react-icons/bs";
 import shape from "../../assets/f-shape.png";
 import icon_n from "../../assets/n-icon.png";
-import you from "../../assets/you.png";
-import facebook from "../../assets/OIP.jpeg";
-import telegram from "../../assets/Telegram_logo.svg.webp";
 // import right_shape from '../../assets/right-shape.png'
 import ani1 from "../../AnimationImage/image2.json";
 import ani3 from "../../AnimationImage/image3.json";
 import Lottie from "lottie-react";
 import { Link, useLocation } from "react-router-dom";
-import { useContext } from "react";
-import { AppContext } from "../../Store/StateData";
+// import { useContext } from "react";
+// import { AppContext } from "../../Store/StateData";
+import { FaFacebook, FaTelegram } from "react-icons/fa";
 const Footer = () => {
   const location = useLocation();
-const {user}= useContext(AppContext)
+// const {user}= useContext(AppContext)
   return (
-    <footer className={`${location.pathname != "/login"? "":"hidden"} ${user != null ?  "mr-[240px] max-md:mr-0":"" }  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
+    <footer className={`${location.pathname != "/login"? "":"hidden"} ${location.pathname != "/profile"? "":"hidden"} ${location.pathname != "/message"? "":"hidden"}  ${location.pathname != "/Register"? "":"hidden"} footer-section rounded-t-[10px] bg-indigo-950 relative z-[99] overflow-hidden
      bg-transparent text-white pt-16`}>
       {/* Shapes */}
       <img className="absolute z-[-1] top-0 left-0" src={shape} alt="Shape" />
@@ -130,39 +128,35 @@ const {user}= useContext(AppContext)
             </div>
           </div>
           <div className="flex max-md:flex-col gap-4 items-center justify-around  w-full py-4">
-<div className="flex items-center justify-around gap-4">
+          <div className="flex items-center justify-around gap-4">
+      {/* YouTube Button */}
+      <button className="button_bg w-[50px] flex items-center justify-center h-[50px] rounded-full">
+        <Link to="https://www.youtube.com/@zefaaf" className="flex items-center justify-center ">
+          <BsYoutube className="w-6 h-6" />
+        </Link>
+      </button>
 
-<Link to='https://www.youtube.com/@zefaaf'>
-  <img src={you} className="w-10 max-md:w-8 h-8"/>
-</Link>
-<Link to='https://www.facebook.com/zefaaf.net'>
+      {/* Facebook Button */}
+      <button className="button_bg w-[50px] flex items-center justify-center h-[50px] rounded-full">
+        <Link to="https://www.facebook.com/zefaaf.net" className="flex items-center justify-center">
+          <FaFacebook />
+        </Link>
+      </button>
 
-  <img src={facebook} className="w-10 max-md:w-8 h-8 rounded-full"/>
-</Link>
-  <Link to='https://x.com/@zefaaf'>
-  <img src={telegram} className="w-10 max-md:w-8 h-8"/>
-</Link>
-</div>
+      {/* Telegram Button */}
+      <button className="button_bg w-[50px] flex items-center justify-center h-[50px] rounded-full">
+        <Link to="https://x.com/@zefaaf" className="flex items-center justify-center">
+          <FaTelegram />
+        </Link>
+      </button>
+    </div>
             <div className="text-md  text-end max-md:text-center w-full">
               <span>جميع الحقوق محفوظة © 2024 لمنصة </span>
               <a href="#" className="text-blue-600">
                 Zefaaf
               </a>
             </div>
-            <div className="footer-social-links flex space-x-4">
-              <a href="#" className="text-blue-400">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-blue-600">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="text-pink-600">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-gray-400">
-                <i className="fab fa-dribbble"></i>
-              </a>
-            </div>
+
           </div>
         </div>
       </div>
@@ -186,7 +180,9 @@ const FooterLinkSection = ({ title, links }) => (
             className="flex items-center space-x-2 text-gray-400 hover:text-white hover:-translate-x-4 transition duration-150"
           >
             <i className="fas fa-angle-double-right"></i>
-            <span>{link.text}</span>
+            <span className="flex items-center gap-3">{link.text}
+
+            </span>
           </Link>
         </li>
       ))}
